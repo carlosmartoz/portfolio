@@ -1,0 +1,4 @@
+Allow: /
+User-Agent: *
+Disallow: /private/
+Sitemap: https://www.carlosmrtzo.com/sitemap.xml
