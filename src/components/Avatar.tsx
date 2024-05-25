@@ -6,7 +6,6 @@ export default function Avatar() {
         width="240"
         height="240"
         version="1.0"
-        className="avatar"
         zoomAndPan="magnify"
         viewBox="60 50 250 260"
         xmlns="http://www.w3.org/2000/svg"
