@@ -1,9 +1,6 @@
 // Client Component
 "use client";
 
-// Next
-import Image from "next/image";
-
 // Utils
 import { common } from "@/utils/common";
 import { spanish } from "@/utils/spanish";
@@ -22,6 +19,7 @@ import { ThemeContext } from "@/context/context";
 
 // Framer Motion
 import { motion, useInView } from "framer-motion";
+import Avatar from "./Avatar";
 
 // Component
 export default function About() {
@@ -83,16 +81,7 @@ export default function About() {
           </div>
 
           <div className="about__profile">
-            <figure>
-              <Image
-                width={240}
-                height={240}
-                alt={common.name}
-                src={common.image}
-                title={common.name}
-                className="about__image"
-              />
-            </figure>
+            <Avatar />
 
             <ul className="about__social">
               <li>
