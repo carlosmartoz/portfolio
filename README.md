@@ -6,18 +6,18 @@
    <h3 align="center">Carlos Martínez</h3>
 
    <p align="center">
-      My personal portfolio to collect my experience and work, using React built in Next.js.
+      My personal portfolio to collect my experience and work.
    </p>
 </div>
 
 ## 💼 Skills
 
-![](https://img.shields.io/badge/HTML-informational?style=for-the-badge&logo=html5&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/CSS-informational?style=for-the-badge&logo=css3&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/TypeScript-informational?style=for-the-badge&logo=TypeScript&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/React-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/Next.js-informational?style=for-the-badge&logo=vercel&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
+![](https://img.shields.io/badge/HTML5-informational?style=for-the-badge&logo=html5&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/CSS3-informational?style=for-the-badge&logo=css3&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/TypeScript-informational?style=for-the-badge&logo=TypeScript&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/React.js-informational?style=for-the-badge&logo=react&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/Next.js-informational?style=for-the-badge&logo=vercel&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
 
 ## 🚨 Fork
 

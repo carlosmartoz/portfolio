@@ -41,25 +41,32 @@ export const spanish: Lenguage = {
     ariaLabelWebsite: "Enlace al sitio web del proyecto",
     cards: [
       {
-        title: "Hackers News",
+        title: "Hackers news",
         technologies: ["React.js", "TypeScript"],
-        website: "https://hackers-news-topaz.vercel.app/",
+        website: "https://hackers-news-ruby.vercel.app/",
         github: "https://github.com/carlosamarto/hackers-news",
         text: "Aplicación web para prueba técnica, visualiza artículos mediante una API y permite guardar artículos como favoritos.",
       },
       {
-        title: "Task App",
+        title: "Task app",
         technologies: ["React.js", "JavaScript"],
-        website: "http://task-app-lovat.vercel.app/",
+        website: "https://task-app-six-chi.vercel.app/",
         github: "https://github.com/carlosamarto/task-app",
         text: "Aplicación web para prueba técnica en la cual se crea un gestor de tareas, donde puedes crear, editar y eliminar tus tareas.",
       },
       {
         title: "Pokédex",
-        website: "https://pokedex-pearl-two.vercel.app/",
+        website: "https://pokedex-vert-nine.vercel.app/",
         github: "https://github.com/carlosamarto/pokedex",
         technologies: ["React.js", "JavaScript"],
         text: "Aplicación web para crear una Pokédex en la cual se consume una API y puedes ver la información de cada Pokémon.",
+      },
+      {
+        title: "Bill calculator",
+        technologies: ["HTML5", "CSS3", "JavaScript"],
+        website: "https://bill-calculator-phi.vercel.app/",
+        github: "https://github.com/carlosmartoz/bill-calculator",
+        text: "Aplicación web desarrollada para una prueba técnica, destinada a calcular facturas con precisión y eficiencia.",
       },
       {
         github: "",

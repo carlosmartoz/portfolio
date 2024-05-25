@@ -41,25 +41,32 @@ export const english: Lenguage = {
     ariaLabelWebsite: "Project's website link",
     cards: [
       {
-        title: "Hackers News",
+        title: "Hackers news",
         technologies: ["React.js", "TypeScript"],
-        website: "https://hackers-news-topaz.vercel.app/",
+        website: "https://hackers-news-ruby.vercel.app/",
         github: "https://github.com/carlosmartoz/hackers-news",
         text: "Web application for a technical test, displays articles via an API and allows saving articles as favorites.",
       },
       {
-        title: "Task App",
+        title: "Task app",
         technologies: ["React.js", "JavaScript"],
-        website: "http://task-app-lovat.vercel.app/",
+        website: "https://task-app-six-chi.vercel.app/",
         github: "https://github.com/carlosmartoz/task-app",
         text: "Web application for a technical test where a task manager is created, allowing you to create, edit, and delete your tasks.",
       },
       {
         title: "Pokédex",
-        website: "https://pokedex-pearl-two.vercel.app/",
+        website: "https://pokedex-vert-nine.vercel.app/",
         github: "https://github.com/carlosmartoz/pokedex",
         technologies: ["React.js", "JavaScript"],
         text: "A web application to create a Pokédex where an API is consumed, allowing you to see the information of each Pokémon.",
+      },
+      {
+        title: "Bill calculator",
+        technologies: ["HTML5", "CSS3", "JavaScript"],
+        website: "https://bill-calculator-phi.vercel.app/",
+        github: "https://github.com/carlosmartoz/bill-calculator",
+        text: "Web application developed for a technical test, designed to calculate invoices accurately and efficiently.",
       },
       {
         github: "",
