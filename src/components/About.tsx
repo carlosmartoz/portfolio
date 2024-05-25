@@ -11,6 +11,7 @@ import { useContext, useRef } from "react";
 
 // Components
 import Line from "@/components/Line";
+import Avatar from "@/components/Avatar";
 import Github from "@/components/Github";
 import Linkedin from "@/components/Linkedin";
 
@@ -19,7 +20,6 @@ import { ThemeContext } from "@/context/context";
 
 // Framer Motion
 import { motion, useInView } from "framer-motion";
-import Avatar from "./Avatar";
 
 // Component
 export default function About() {
