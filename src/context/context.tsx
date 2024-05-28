@@ -39,36 +39,6 @@ export default function ThemeProvider({
   // Hook to control the header visibility
   const [isHeaderVisible, prevScrollPos] = useHeaderScroll();
 
-  // Set Effect
-  useEffect(() => {
-    // Ocultar el contenido y deshabilitar el desplazamiento al cargar la página
-    document.body.style.visibility = "hidden";
-
-    const handleScroll = () => {
-      // Ajustar el scroll a la parte superior de la página
-      window.scrollTo(0, 0);
-
-      // Verificar si el scroll está en la parte superior
-      if (window.scrollY === 0) {
-        // Mostrar el contenido y restaurar el desplazamiento
-        document.body.style.visibility = "visible";
-        window.removeEventListener("scroll", handleScroll); // Eliminar el listener
-        document.documentElement.style.scrollBehavior = "smooth";
-      }
-    };
-
-    // Añadir un evento scroll listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Llamar a handleScroll inicialmente para ajustar el scroll
-    handleScroll();
-
-    // Limpiar el listener cuando el componente se desmonte
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   // Set effect
   useEffect(() => {
     // Check if the navigator is defined
