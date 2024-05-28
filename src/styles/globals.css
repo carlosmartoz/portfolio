@@ -811,3 +811,22 @@ textarea {
   stroke: var(--color-red);
 }
 /* Repository */
+
+/* Stars */
+.stars {
+  gap: 2px;
+  display: flex;
+  align-items: center;
+}
+.stars p {
+  margin-top: 2px;
+  color: var(--color-red);
+}
+/* Stars */
+
+/* Star */
+.star {
+  fill: var(--color-red);
+  stroke: var(--color-red);
+}
+/* Star */
