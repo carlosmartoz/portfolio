@@ -19,7 +19,19 @@ import { english } from "@/utils/english";
 import { ThemeContext } from "@/context/context";
 
 // Component
-export default function Aside({ openMenu }: { openMenu: boolean }) {
+export default function Aside({
+  openMenu,
+  setOpenMenu,
+}: {
+  openMenu: boolean;
+  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  // Set menu item variant
+  const aside__item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 0 },
+  };
+
   // Context
   const { lenguage } = useContext(ThemeContext);
 
@@ -29,22 +41,16 @@ export default function Aside({ openMenu }: { openMenu: boolean }) {
     visible: { transition: { staggerChildren: 0.1 } },
   };
 
-  // Set menu item variant
-  const aside__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 0 },
-  };
-
   return (
     <>
       <motion.aside
         variants={aside}
         initial="hidden"
-        animate={openMenu ? "visible" : "hidden"}
         className="aside"
+        animate={openMenu ? "visible" : "hidden"}
         style={{
+          right: openMenu ? "0" : "-100%",
           visibility: openMenu ? "visible" : "hidden",
-          transform: openMenu ? "translateX(0)" : "translateX(100%)",
         }}
       >
         <nav className="aside__nav">
@@ -58,7 +64,11 @@ export default function Aside({ openMenu }: { openMenu: boolean }) {
                   >
                     <Line width={4} height={2} />
 
-                    <a href={`/${item.link}`} className="aside__link">
+                    <a
+                      href={`/${item.link}`}
+                      className="aside__link"
+                      onClick={() => setOpenMenu(false)}
+                    >
                       {item.text}
                     </a>
                   </motion.li>

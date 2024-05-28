@@ -68,7 +68,7 @@ textarea {
 /* Body */
 
 /* Lock */
-.lock main {
+.lock body {
   overflow: hidden;
 }
 .lock main,

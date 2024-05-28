@@ -22,7 +22,7 @@ export default function Header() {
         className="header"
         style={{
           boxShadow: prevScrollPos > 32 && isHeaderVisible ? "var(--shadow-normal)" : "none",
-          transform: isHeaderVisible ? "translateY(0)" : "translateY(-100%)",
+          transform: isHeaderVisible ? "translateY(0)" : "translateY(-116px)",
         }}
       >
         <nav className="nav">

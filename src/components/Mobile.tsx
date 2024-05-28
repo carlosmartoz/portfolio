@@ -76,7 +76,7 @@ export default function Mobile() {
         </li>
       </motion.ul>
 
-      <Aside openMenu={openMenu} />
+      <Aside openMenu={openMenu} setOpenMenu={setOpenMenu} />
     </>
   );
 }
