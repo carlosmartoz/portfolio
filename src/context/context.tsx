@@ -41,16 +41,32 @@ export default function ThemeProvider({
 
   // Set Effect
   useEffect(() => {
-    // Disable smooth scrolling when the page is loading
-    document.documentElement.style.scrollBehavior = "auto";
+    // Ocultar el contenido y deshabilitar el desplazamiento al cargar la página
+    document.body.style.visibility = "hidden";
 
-    // Scroll to the top of the page
-    window.scrollTo(0, 0);
+    const handleScroll = () => {
+      // Ajustar el scroll a la parte superior de la página
+      window.scrollTo(0, 0);
 
-    // Enable smooth scrolling after the page has loaded
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }, 0);
+      // Verificar si el scroll está en la parte superior
+      if (window.scrollY === 0) {
+        // Mostrar el contenido y restaurar el desplazamiento
+        document.body.style.visibility = "visible";
+        window.removeEventListener("scroll", handleScroll); // Eliminar el listener
+        document.documentElement.style.scrollBehavior = "smooth";
+      }
+    };
+
+    // Añadir un evento scroll listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Llamar a handleScroll inicialmente para ajustar el scroll
+    handleScroll();
+
+    // Limpiar el listener cuando el componente se desmonte
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Set effect
