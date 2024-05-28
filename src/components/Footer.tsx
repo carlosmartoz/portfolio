@@ -72,9 +72,9 @@ export default function Footer() {
             <Repository width={18} height={18} />
           ) : (
             <span className="stars">
-              <p>{stars}</p>
-
               <Star width={18} height={18} />
+
+              <p>{stars}</p>
             </span>
           )}
 
