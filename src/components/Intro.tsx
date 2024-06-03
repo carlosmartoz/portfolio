@@ -76,7 +76,7 @@ export default function Intro() {
         <motion.div variants={section__item}>
           <Button
             external={false}
-            link={common.contact}
+            link={common.about}
             text={lenguage ? english.intro.button : spanish.intro.button}
           />
         </motion.div>

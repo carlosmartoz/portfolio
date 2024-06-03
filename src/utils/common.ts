@@ -4,7 +4,7 @@ import { type Common } from "@/types/common";
 // Util
 export const common: Common = {
   emailText: "E-mail",
-  contact: "#contact",
+  about: "#about",
   githubText: "Github",
   name: "Carlos Martínez",
   linkedinText: "LinkedIn",

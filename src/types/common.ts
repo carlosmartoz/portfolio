@@ -3,8 +3,8 @@ export interface Common {
   name: string;
   email: string;
   image: string;
+  about: string;
   github: string;
-  contact: string;
   linkedin: string;
   emailText: string;
   githubText: string;
