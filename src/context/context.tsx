@@ -4,13 +4,13 @@
 // Utils
 import { type Context } from "@/types/context";
 
-// React
-import { createContext, useEffect, useState } from "react";
-
 // Hooks
 import { useColorMode } from "@/hooks/useColorMode";
 import { useDeviceType } from "@/hooks/useDeviceType";
 import { useHeaderScroll } from "@/hooks/useHeaderScroll";
+
+// React
+import { createContext, useEffect, useState } from "react";
 
 // Context
 export const ThemeContext = createContext<Context>({

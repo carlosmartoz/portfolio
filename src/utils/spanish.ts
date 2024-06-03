@@ -12,7 +12,6 @@ export const spanish: Lenguage = {
       { text: "Introducción", link: "#introduction" },
       { text: "Acerca de mí", link: "#about" },
       { text: "Proyectos", link: "#projects" },
-      { text: "Contacto", link: "#contact" },
     ],
     ariaLabelLenguage: "Botón para cambiar a inglés",
     ariaLabelLight: "Botón para cambiar a modo claro",
@@ -20,12 +19,14 @@ export const spanish: Lenguage = {
     ariaLabelMenu: "Botón de menú para dispositivos móviles",
   },
   intro: {
-    button: "Contáctame",
+    button: "Sobre mi",
     subtitle: "Hola, mi nombre es",
     text: "Soy un desarrollador Front-End apasionado por crear páginas web <br /> que destacan por su estilo único.",
   },
   about: {
+    resume: "Curriculum",
     title: "Acerca de mí",
+    resumeLink: "/curriculum-carlos-martinez.pdf",
     ariaLabelGithub: "Enlace a mi perfil de Github",
     ariaLabelLinkedin: "Enlace a mi perfil de LinkedIn",
     text1:
@@ -111,12 +112,6 @@ export const spanish: Lenguage = {
         text: "Proyecto para cliente, desarrollo de página web para emprendimiento de artesanía, con cursos y NFTs.",
       },
     ],
-  },
-  contact: {
-    button: "¡Hablemos!",
-    title: "Ponte en contacto",
-    subtitle: "¿Cuál es el siguiente paso?",
-    text: "Siempre estoy abierto a nuevas oportunidades laborales. Puedes contactarme a través de mis <br /> redes sociales o enviarme un correo electrónico.",
   },
   footer: {
     text: "Creado por Carlos Martínez.",

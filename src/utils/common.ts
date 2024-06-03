@@ -3,8 +3,11 @@ import { type Common } from "@/types/common";
 
 // Util
 export const common: Common = {
+  emailText: "E-mail",
   contact: "#contact",
+  githubText: "Github",
   name: "Carlos Martínez",
+  linkedinText: "LinkedIn",
   technologies: [
     { text: "HTML5" },
     { text: "CSS3" },

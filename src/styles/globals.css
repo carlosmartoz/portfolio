@@ -18,7 +18,7 @@
   --font-inter-large: 88px;
   --font-inter-extra-large: 132px;
 
-  --shadow-normal: 0px 0px 64px rgba(0, 0, 0, 0.25);
+  --shadow-normal: 0px 0px 64px rgba(0, 0, 0, 0.1);
 }
 /* Variables */
 
@@ -51,7 +51,7 @@ textarea {
 /* Html */
 .html {
   min-height: 100svh;
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
   transition: all 0.2s ease-in-out;
   background-color: var(--color-dark);
 }
@@ -98,7 +98,7 @@ textarea {
 
 /* Nav */
 .nav {
-  padding: 32px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -132,11 +132,19 @@ textarea {
   align-items: center;
   justify-content: space-between;
 }
+.menu__container {
+  gap: 32px;
+  display: flex;
+  align-items: center;
+}
 .menu__item,
 .menu__inner {
   gap: 16px;
   display: flex;
   align-items: center;
+}
+.menu__separator {
+  color: var(--color-red);
 }
 .menu__link {
   font-weight: 400;
@@ -160,17 +168,14 @@ textarea {
 }
 /* Menu */
 
-/* Line */
-.line rect {
-  stroke: var(--color-red);
-}
-/* Line */
-
 /* Button */
 .button {
+  gap: 4px;
+  display: flex;
   font-weight: 400;
   line-height: 18px;
   padding: 12px 24px;
+  align-items: flex-end;
   color: var(--color-light);
   transition: all 0.2s ease-in-out;
   font-size: var(--font-fira-small);
@@ -187,15 +192,34 @@ textarea {
 }
 /* Button */
 
-/* Settings */
-.settings {
+/* Social */
+.social {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+.social__icon {
+  color: var(--color-light);
+  transition: all 0.2s ease-in-out;
+}
+.html.colorMode .social__icon {
+  color: var(--color-dark);
+}
+.social__icon:hover,
+.html.colorMode .social__icon:hover {
+  color: var(--color-red);
+}
+/* Social */
+
+/* Options */
+.options {
   gap: 16px;
   z-index: 999;
   display: flex;
   position: relative;
   align-items: center;
 }
-.settings__lenguage {
+.options__lenguage {
   font-weight: 400;
   line-height: 24px;
   color: var(--color-light);
@@ -203,23 +227,33 @@ textarea {
   font-family: var(--font-fira-code);
   font-size: var(--font-fira-medium);
 }
-.html.colorMode .settings__lenguage {
+.html.colorMode .options__lenguage {
   color: var(--color-dark);
 }
-.settings__lenguage:hover,
-.html.colorMode .settings__lenguage:hover {
+.options__lenguage:hover,
+.html.colorMode .options__lenguage:hover {
   color: var(--color-red);
 }
-.settings__color {
+.options__color {
   display: flex;
   align-items: center;
+  color: var(--color-light);
+  transition: all 0.2s ease-in-out;
 }
-@media screen and (min-width: 1024px) {
-  .settings {
-    margin-left: 48px;
-  }
+.html.colorMode .options__color {
+  color: var(--color-dark);
 }
-/* Settings */
+.options__color:hover,
+.html.colorMode .options__color:hover {
+  color: var(--color-red);
+}
+/* Options */
+
+/* Icon */
+.icon {
+  margin-bottom: 1px;
+}
+/* Icon */
 
 /* Light */
 .light {
@@ -346,6 +380,9 @@ textarea {
   gap: 16px;
   display: flex;
   align-items: center;
+}
+.aside__separator {
+  color: var(--color-red);
 }
 .aside__link {
   font-weight: 400;
@@ -530,8 +567,15 @@ textarea {
   font-size: var(--font-fira-small);
   font-family: var(--font-fira-code);
 }
+.about__separator {
+  color: var(--color-red);
+}
 .html.colorMode .about__item {
   color: var(--color-dark);
+}
+.about__links {
+  gap: 24px;
+  display: flex;
 }
 .about__profile {
   gap: 32px;
@@ -539,11 +583,6 @@ textarea {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-}
-.about__social {
-  gap: 12px;
-  display: flex;
-  align-items: center;
 }
 @media screen and (min-width: 414px) {
   .about__list {
@@ -559,28 +598,6 @@ textarea {
   }
 }
 /* About */
-
-/* Github */
-.github path {
-  fill: transparent;
-  stroke: var(--color-red);
-  transition: all 0.2s ease-in-out;
-}
-.github:hover path {
-  fill: var(--color-red);
-}
-/* Github */
-
-/* Linkedin */
-.linkedin path {
-  fill: transparent;
-  stroke: var(--color-red);
-  transition: all 0.2s ease-in-out;
-}
-.linkedin:hover path {
-  fill: var(--color-red);
-}
-/* Linkedin */
 
 /* Projects */
 .projects {
@@ -653,10 +670,25 @@ textarea {
 .html.colorMode .card__title {
   color: var(--color-dark);
 }
-.card__icons {
+.card:hover .card__title,
+.card:hover .html.colorMode .card__title {
+  color: var(--color-red);
+}
+.card__links {
   gap: 12px;
   display: flex;
   align-items: center;
+}
+.card__icon {
+  color: var(--color-light);
+  transition: all 0.2s ease-in-out;
+}
+.html.colorMode .card__icon {
+  color: var(--color-dark);
+}
+.card__icon:hover,
+.html.colorMode .card__icon:hover {
+  color: var(--color-red);
 }
 .card__text {
   font-weight: 400;
@@ -676,14 +708,14 @@ textarea {
 }
 .card__item {
   font-weight: 400;
-  line-height: 18px;
-  color: var(--color-gray);
+  line-height: 16px;
+  color: var(--color-light);
   transition: all 0.2s ease-in-out;
-  font-size: var(--font-fira-small);
   font-family: var(--font-fira-code);
+  font-size: var(--font-fira-extra-small);
 }
 .html.colorMode .card__item {
-  color: var(--color-dark-blue);
+  color: var(--color-dark);
 }
 @media screen and (min-width: 414px) {
   .card {
@@ -799,34 +831,20 @@ textarea {
 .html.colorMode .footer__link:hover {
   color: var(--color-red);
 }
+.footer__icon {
+  gap: 2px;
+  display: flex;
+  align-items: center;
+  color: var(--color-red);
+  transition: all 0.2s ease-in-out;
+}
+.footer__icon p {
+  margin-top: 2px;
+  color: var(--color-red);
+}
 @media screen and (min-width: 414px) {
   .footer__link {
     font-size: var(--font-fira-small);
   }
 }
 /* Footer */
-
-/* Repository */
-.repository path {
-  stroke: var(--color-red);
-}
-/* Repository */
-
-/* Stars */
-.stars {
-  gap: 2px;
-  display: flex;
-  align-items: center;
-}
-.stars p {
-  margin-top: 2px;
-  color: var(--color-red);
-}
-/* Stars */
-
-/* Star */
-.star {
-  fill: var(--color-red);
-  stroke: var(--color-red);
-}
-/* Star */

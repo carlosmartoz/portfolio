@@ -1,6 +1,10 @@
 // Client Component
 "use client";
 
+// Icons
+import Star from "@/icons/Star";
+import Branch from "@/icons/Branch";
+
 // Utils
 import { common } from "@/utils/common";
 import { spanish } from "@/utils/spanish";
@@ -8,10 +12,6 @@ import { english } from "@/utils/english";
 
 // Context
 import { ThemeContext } from "@/context/context";
-
-// Components
-import Star from "@/components/Star";
-import Repository from "@/components/Repository";
 
 // Framer Motion
 import { motion, useInView } from "framer-motion";
@@ -69,9 +69,11 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           {error || loading ? (
-            <Repository width={18} height={18} />
+            <span className="footer__icon">
+              <Branch width={18} height={18} />
+            </span>
           ) : (
-            <span className="stars">
+            <span className="footer__icon">
               <Star width={18} height={18} />
 
               <p>{stars}</p>

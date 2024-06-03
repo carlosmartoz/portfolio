@@ -1,6 +1,15 @@
 // Client Component
 "use client";
 
+// Icons
+import Email from "@/icons/Email";
+import Github from "@/icons/Github";
+import Linkedin from "@/icons/Linkedin";
+
+// Components
+import Avatar from "@/components/Avatar";
+import Button from "@/components/Button";
+
 // Utils
 import { common } from "@/utils/common";
 import { spanish } from "@/utils/spanish";
@@ -8,12 +17,6 @@ import { english } from "@/utils/english";
 
 // React
 import { useContext, useRef } from "react";
-
-// Components
-import Line from "@/components/Line";
-import Avatar from "@/components/Avatar";
-import Github from "@/components/Github";
-import Linkedin from "@/components/Linkedin";
 
 // Context
 import { ThemeContext } from "@/context/context";
@@ -29,9 +32,6 @@ export default function About() {
   // Context
   const { lenguage } = useContext(ThemeContext);
 
-  // Hook to check if the section is in view
-  const isInView = useInView(ref, { once: true });
-
   // Set section variant
   const section = {
     hidden: { opacity: 0, y: 64 },
@@ -41,6 +41,9 @@ export default function About() {
       transition: { delay: 0.2, duration: 0.2 },
     },
   };
+
+  // Hook to check if the section is in view
+  const isInView = useInView(ref, { once: true });
 
   return (
     <>
@@ -73,47 +76,43 @@ export default function About() {
             <ul className="about__list">
               {common.technologies.map((technology) => (
                 <li key={technology.text} className="about__item">
-                  <Line width={4} height={2} />
+                  <span className="about__separator">-</span>
+
                   {technology.text}
                 </li>
               ))}
             </ul>
+
+            <div className="about__links">
+              <Button
+                link={common.linkedin}
+                text={common.linkedinText}
+                icon={<Linkedin width={20} height={20} className="icon" />}
+              />
+
+              <Button
+                link={common.github}
+                text={common.githubText}
+                icon={<Github width={20} height={20} className="icon" />}
+              />
+
+              <Button
+                link={common.email}
+                text={common.emailText}
+                icon={<Email width={20} height={20} className="icon" />}
+              />
+
+              <Button
+                text={lenguage ? english.about.resume : spanish.about.resume}
+                link={
+                  lenguage ? english.about.resumeLink : spanish.about.resumeLink
+                }
+              />
+            </div>
           </div>
 
           <div className="about__profile">
             <Avatar />
-
-            <ul className="about__social">
-              <li>
-                <a
-                  target="_blank"
-                  href={common.github}
-                  rel="noopener noreferrer"
-                  aria-label={
-                    lenguage
-                      ? english.about.ariaLabelGithub
-                      : spanish.about.ariaLabelGithub
-                  }
-                >
-                  <Github width={29} height={29} />
-                </a>
-              </li>
-
-              <li>
-                <a
-                  target="_blank"
-                  href={common.linkedin}
-                  rel="noopener noreferrer"
-                  aria-label={
-                    lenguage
-                      ? english.about.ariaLabelLinkedin
-                      : spanish.about.ariaLabelLinkedin
-                  }
-                >
-                  <Linkedin width={29} height={29} />
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </motion.section>

@@ -6,6 +6,9 @@ export interface Common {
   github: string;
   contact: string;
   linkedin: string;
+  emailText: string;
+  githubText: string;
   repository: string;
+  linkedinText: string;
   technologies: Array<{ text: string }>;
 }

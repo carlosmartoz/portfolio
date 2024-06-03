@@ -32,23 +32,9 @@ const firaCode = Fira_Code({
 
 // Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL("https://carlosmrtzo.com/"),
   generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  keywords: [
-    "React",
-    "Next.js",
-    "WordPress",
-    "Portfolio",
-    "Front-End",
-    "JavaScript",
-    "TypeScript",
-    "Carlos Martínez",
-  ],
-  authors: [{ name: "Carlos", url: "https://carlosmrtzo.com/" }],
-  creator: "Carlos Martínez",
-  manifest: "/manifest.webmanifest",
   category: "portfolio",
+  creator: "Carlos Martínez",
   robots: {
     index: false,
     follow: true,
@@ -62,31 +48,36 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
     },
   },
+  manifest: "/manifest.webmanifest",
+  referrer: "origin-when-cross-origin",
+  metadataBase: new URL("https://carlosmartoz.com/"),
+  keywords: ["Portafolio", "Portfolio", "Carlos Martínez"],
+  authors: [{ name: "Carlos", url: "https://carlosmartoz.com/" }],
   title: "Carlos Martínez",
   description:
-    "Front-End Developer passionate about creating web pages that stand out for their great style.",
+    "Front-End Developer passionate about creating web pages with unique style.",
   openGraph: {
-    title: "Carlos Martínez",
-    description:
-      "Front-End Developer passionate about creating web pages that stand out for their great style.",
-    images: "/images/opengraph-image.png",
-    url: "https://carlosmrtzo.com/",
-    siteName: "Carlos Martínez",
     type: "website",
+    title: "Carlos Martínez",
+    siteName: "Carlos Martínez",
+    url: "https://carlosmartoz.com/",
+    images: "/images/opengraph-image.png",
+    description:
+      "Front-End Developer passionate about creating web pages with unique style.",
   },
   twitter: {
-    card: "summary_large_image",
-    creator: "@carlosamartoz",
     title: "Carlos Martínez",
-    description:
-      "Front-End Developer passionate about creating web pages that stand out for their great style.",
+    creator: "@carlosamartoz",
+    card: "summary_large_image",
     images: "/images/twitter-image.png",
+    description:
+      "Front-End Developer passionate about creating web pages with unique style.",
   },
   icons: {
     shortcut: {
-      url: "/icons/favicon.ico",
       sizes: "32x32",
       type: "image/x-icon",
+      url: "/icons/favicon.ico",
     },
     icon: [
       { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
@@ -100,46 +91,46 @@ export const metadata: Metadata = {
       { url: "/icons/android-icon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/icons/android-icon-64.png", sizes: "64x64", type: "image/png" },
       {
-        url: "/icons/android-icon-128.png",
         sizes: "128x128",
         type: "image/png",
+        url: "/icons/android-icon-128.png",
       },
       {
-        url: "/icons/android-icon-512.png",
         sizes: "512x512",
         type: "image/png",
+        url: "/icons/android-icon-512.png",
       },
     ],
     apple: [
       {
-        url: "/icons/apple-touch-icon-16.png",
         sizes: "16x16",
         type: "image/png",
+        url: "/icons/apple-touch-icon-16.png",
       },
       {
-        url: "/icons/apple-touch-icon-32.png",
         sizes: "32x32",
         type: "image/png",
+        url: "/icons/apple-touch-icon-32.png",
       },
       {
-        url: "/icons/apple-touch-icon-48.png",
         sizes: "48x48",
         type: "image/png",
+        url: "/icons/apple-touch-icon-48.png",
       },
       {
-        url: "/icons/apple-touch-icon-64.png",
         sizes: "64x64",
         type: "image/png",
+        url: "/icons/apple-touch-icon-64.png",
       },
       {
-        url: "/icons/apple-touch-icon-128.png",
         sizes: "128x128",
         type: "image/png",
+        url: "/icons/apple-touch-icon-128.png",
       },
       {
-        url: "/icons/apple-touch-icon-512.png",
         sizes: "512x512",
         type: "image/png",
+        url: "/icons/apple-touch-icon-512.png",
       },
     ],
   },
@@ -151,7 +142,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <html lang="es" className={`html ${inter.variable} ${firaCode.variable}`}>
+      <html className={`html ${inter.variable} ${firaCode.variable}`}>
         <body className="body">
           <ThemeProvider>{children}</ThemeProvider>
 

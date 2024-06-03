@@ -8,7 +8,6 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 // Components
-import Line from "@/components/Line";
 import Button from "@/components/Button";
 
 // Utils
@@ -58,11 +57,11 @@ export default function Aside({
             {lenguage
               ? english.header.menu.map((item, index) => (
                   <motion.li
-                    variants={aside__item}
                     key={index}
+                    variants={aside__item}
                     className="aside__item"
                   >
-                    <Line width={4} height={2} />
+                    <span className="aside__separator">-</span>
 
                     <a
                       href={`/${item.link}`}
@@ -75,13 +74,17 @@ export default function Aside({
                 ))
               : spanish.header.menu.map((item, index) => (
                   <motion.li
-                    variants={aside__item}
                     key={index}
+                    variants={aside__item}
                     className="aside__item"
                   >
-                    <Line width={4} height={2} />
+                    <span className="aside__separator">-</span>
 
-                    <a href={`/${item.link}`} className="aside__link">
+                    <a
+                      href={`/${item.link}`}
+                      className="aside__link"
+                      onClick={() => setOpenMenu(false)}
+                    >
                       {item.text}
                     </a>
                   </motion.li>

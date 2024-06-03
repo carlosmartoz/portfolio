@@ -16,15 +16,21 @@ import { english } from "@/utils/english";
 
 // Components
 import Logo from "@/components/Logo";
-import Line from "@/components/Line";
 import Button from "@/components/Button";
-import Settings from "@/components/Settings";
+import Social from "@/components/Social";
+import Options from "@/components/Options";
 
 // Context
 import { ThemeContext } from "@/context/context";
 
 // Component
 export default function Menu() {
+  // Set menu item variant
+  const menu__item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -32 },
+  };
+
   // Context
   const { lenguage } = useContext(ThemeContext);
 
@@ -32,12 +38,6 @@ export default function Menu() {
   const menu = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
-  };
-
-  // Set menu item variant
-  const menu__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -32 },
   };
 
   return (
@@ -57,44 +57,58 @@ export default function Menu() {
         </Link>
       </motion.li>
 
-      <ul className="menu__inner">
-        {lenguage
-          ? english.header.menu.map((item, index) => (
-              <motion.li
-                key={index}
-                variants={menu__item}
-                className="menu__item"
-              >
-                <a href={`/${item.link}`} className="menu__link">
-                  {item.text}
-                </a>
-                <Line width={4} height={2} />
-              </motion.li>
-            ))
-          : spanish.header.menu.map((item, index) => (
-              <motion.li
-                key={index}
-                variants={menu__item}
-                className="menu__item"
-              >
-                <a href={`/${item.link}`} className="menu__link">
-                  {item.text}
-                </a>
-                <Line width={4} height={2} />
-              </motion.li>
-            ))}
+      <li>
+        <ul className="menu__container">
+          <li>
+            <ul className="menu__inner">
+              {lenguage
+                ? english.header.menu.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      variants={menu__item}
+                      className="menu__item"
+                    >
+                      <a href={`/${item.link}`} className="menu__link">
+                        {item.text}
+                      </a>
 
-        <motion.li variants={menu__item} className="menu__item">
-          <Button
-            link={lenguage ? english.header.link : spanish.header.link}
-            text={lenguage ? english.header.button : spanish.header.button}
-          />
-        </motion.li>
+                      <span className="menu__separator">-</span>
+                    </motion.li>
+                  ))
+                : spanish.header.menu.map((item, index) => (
+                    <motion.li
+                      key={index}
+                      variants={menu__item}
+                      className="menu__item"
+                    >
+                      <a href={`/${item.link}`} className="menu__link">
+                        {item.text}
+                      </a>
 
-        <motion.li variants={menu__item} className="menu__item">
-          <Settings />
-        </motion.li>
-      </ul>
+                      <span className="menu__separator">-</span>
+                    </motion.li>
+                  ))}
+
+              <motion.li variants={menu__item} className="menu__item">
+                <Button
+                  link={lenguage ? english.header.link : spanish.header.link}
+                  text={
+                    lenguage ? english.header.button : spanish.header.button
+                  }
+                />
+              </motion.li>
+            </ul>
+          </li>
+
+          <motion.li variants={menu__item} className="menu__item">
+            <Social />
+          </motion.li>
+
+          <motion.li variants={menu__item} className="menu__item">
+            <Options />
+          </motion.li>
+        </ul>
+      </li>
     </motion.ul>
   );
 }

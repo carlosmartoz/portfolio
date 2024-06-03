@@ -1,12 +1,12 @@
 // Client Component
 "use client";
 
+// Icons
+import Dark from "@/icons/Dark";
+import Light from "@/icons/light";
+
 // React
 import { useContext } from "react";
-
-// Components
-import Dark from "@/components/Dark";
-import Light from "@/components/Light";
 
 // Utils
 import { spanish } from "@/utils/spanish";
@@ -16,23 +16,23 @@ import { english } from "@/utils/english";
 import { ThemeContext } from "@/context/context";
 
 // Component
-export default function Settings() {
+export default function Options() {
   // Context
   const { colorMode, setColorMode, lenguage, setLenguage } =
     useContext(ThemeContext);
 
   return (
     <>
-      <ul className="settings">
+      <ul className="options">
         <li>
           <button
             type="button"
+            className="options__lenguage"
             aria-label={
               lenguage
                 ? english.header.ariaLabelLenguage
                 : spanish.header.ariaLabelLenguage
             }
-            className="settings__lenguage"
             onClick={() => setLenguage(!lenguage)}
           >
             {lenguage ? english.header.lenguage : spanish.header.lenguage}
@@ -43,20 +43,28 @@ export default function Settings() {
           {colorMode ? (
             <button
               type="button"
+              className="options__color"
+              aria-label={
+                lenguage
+                  ? english.header.ariaLabelLight
+                  : spanish.header.ariaLabelLight
+              }
               onClick={() => setColorMode(!colorMode)}
-              className="settings__color"
-              aria-label={lenguage ? english.header.ariaLabelLight : spanish.header.ariaLabelLight}
             >
-              <Dark width={40} height={40} />
+              <Dark width={32} height={32} />
             </button>
           ) : (
             <button
               type="button"
+              className="options__color"
+              aria-label={
+                lenguage
+                  ? english.header.ariaLabelDark
+                  : spanish.header.ariaLabelDark
+              }
               onClick={() => setColorMode(!colorMode)}
-              className="settings__color"
-              aria-label={lenguage ? english.header.ariaLabelDark : spanish.header.ariaLabelDark}
             >
-              <Light width={40} height={40} />
+              <Light width={32} height={32} />
             </button>
           )}
         </li>

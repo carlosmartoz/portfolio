@@ -21,6 +21,8 @@ export interface Lenguage {
     text1: string;
     text2: string;
     text3: string;
+    resume: string;
+    resumeLink: string;
     ariaLabelGithub: string;
     ariaLabelLinkedin: string;
   };
@@ -35,12 +37,6 @@ export interface Lenguage {
       website: string;
       technologies: string[];
     }>;
-  };
-  contact: {
-    text: string;
-    title: string;
-    button: string;
-    subtitle: string;
   };
   footer: {
     text: string;

@@ -4,13 +4,13 @@
 // React
 import { useContext } from "react";
 
+// Icons
+import Github from "@/icons/Github";
+import External from "@/icons/External";
+
 // Utils
 import { spanish } from "@/utils/spanish";
 import { english } from "@/utils/english";
-
-// Components
-import Github from "@/components/Github";
-import External from "@/components/External";
 
 // Context
 import { ThemeContext } from "@/context/context";
@@ -38,37 +38,43 @@ export default function Cards({
         <header className="card__header">
           <h2 className="card__title">{title}</h2>
 
-          <div className="card__icons">
-            {github !== "" && (
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={
-                  lenguage
-                    ? english.projects.ariaLabelGithub
-                    : spanish.projects.ariaLabelGithub
-                }
-              >
-                <Github width={29} height={29} />
-              </a>
-            )}
+          <ul className="card__links">
+            <li>
+              {github !== "" && (
+                <a
+                  href={github}
+                  target="_blank"
+                  className="card__icon"
+                  rel="noopener noreferrer"
+                  aria-label={
+                    lenguage
+                      ? english.projects.ariaLabelGithub
+                      : spanish.projects.ariaLabelGithub
+                  }
+                >
+                  <Github width={24} height={24} />
+                </a>
+              )}
+            </li>
 
-            {website !== "" && (
-              <a
-                href={website}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={
-                  lenguage
-                    ? english.projects.ariaLabelWebsite
-                    : spanish.projects.ariaLabelWebsite
-                }
-              >
-                <External width={29} height={29} />
-              </a>
-            )}
-          </div>
+            <li>
+              {website !== "" && (
+                <a
+                  href={website}
+                  target="_blank"
+                  className="card__icon"
+                  rel="noopener noreferrer"
+                  aria-label={
+                    lenguage
+                      ? english.projects.ariaLabelWebsite
+                      : spanish.projects.ariaLabelWebsite
+                  }
+                >
+                  <External width={24} height={24} />
+                </a>
+              )}
+            </li>
+          </ul>
         </header>
 
         <section>

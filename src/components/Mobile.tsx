@@ -17,17 +17,23 @@ import { english } from "@/utils/english";
 // Context
 import { ThemeContext } from "@/context/context";
 
-// Hooks
-import { useOpenMenu } from "@/hooks/useOpenMenu";
-
 // Components
 import Logo from "@/components/Logo";
 import Aside from "@/components/Aside";
+import Options from "@/components/Options";
 import Hamburguer from "@/components/Hamburguer";
-import MenuSettings from "@/components/Settings";
+
+// Hooks
+import { useOpenMenu } from "@/hooks/useOpenMenu";
 
 // Component
 export default function Mobile() {
+  // Set menu item variant
+  const menu__item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -32 },
+  };
+
   // Context
   const { lenguage } = useContext(ThemeContext);
 
@@ -38,12 +44,6 @@ export default function Mobile() {
   const menu = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.2 } },
-  };
-
-  // Set menu item variant
-  const menu__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -32 },
   };
 
   return (
@@ -66,7 +66,7 @@ export default function Mobile() {
         <li>
           <ul className="mobile__inner">
             <motion.li variants={menu__item}>
-              <MenuSettings />
+              <Options />
             </motion.li>
 
             <motion.li variants={menu__item}>

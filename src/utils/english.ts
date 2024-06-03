@@ -16,16 +16,17 @@ export const english: Lenguage = {
       { text: "Introduction", link: "#introduction" },
       { text: "About Me", link: "#about" },
       { text: "Projects", link: "#projects" },
-      { text: "Contact", link: "#contact" },
     ],
   },
   intro: {
-    button: "Contact Me",
+    button: "About Me",
     subtitle: "Hello, my name is",
     text: "I'm a Front-End Developer passionate about creating web pages <br /> that stand out for their unique style.",
   },
   about: {
+    resume: "Resume",
     title: "About Me",
+    resumeLink: "/resume-carlos-martinez.pdf",
     ariaLabelGithub: "Link to my Github profile",
     ariaLabelLinkedin: "Link to my LinkedIn profile",
     text1:
@@ -111,12 +112,6 @@ export const english: Lenguage = {
         text: "Project for client, website development for craftsmanship entrepreneurship, featuring courses and NFTs.",
       },
     ],
-  },
-  contact: {
-    button: "Let's Talk!",
-    title: "Get in Touch",
-    subtitle: "What's the next step?",
-    text: "I'm always open to new job opportunities. You can contact me through <br /> my social media or send me an email.",
   },
   footer: {
     text: "Created by Carlos Martínez.",

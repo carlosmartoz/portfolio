@@ -20,9 +20,6 @@ import { ThemeContext } from "@/context/context";
 
 // Component
 export default function Intro() {
-  // Context
-  const { lenguage } = useContext(ThemeContext);
-
   // Set section variant
   const section = {
     hidden: {},
@@ -42,6 +39,9 @@ export default function Intro() {
       transition: { duration: 0.2 },
     },
   };
+
+  // Context
+  const { lenguage } = useContext(ThemeContext);
 
   return (
     <>

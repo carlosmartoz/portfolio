@@ -22,6 +22,12 @@ export default function Projects() {
   // Ref
   const ref = useRef(null);
 
+  // Set section item variant
+  const section__item = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 32 },
+  };
+
   // Context
   const { lenguage } = useContext(ThemeContext);
 
@@ -36,12 +42,6 @@ export default function Projects() {
       opacity: 1,
       transition: { delay: 0.2, duration: 0.2, staggerChildren: 0.2 },
     },
-  };
-
-  // Set section item variant
-  const section__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 32 },
   };
 
   return (
