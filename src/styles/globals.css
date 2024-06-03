@@ -576,6 +576,8 @@ textarea {
 .about__links {
   gap: 24px;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .about__profile {
   gap: 32px;
@@ -588,6 +590,12 @@ textarea {
   .about__list {
     justify-content: flex-start;
     grid-template-columns: repeat(3, auto);
+  }
+}
+@media screen and (min-width: 768px) {
+  .about__links {
+    align-items: center;
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 1024px) {

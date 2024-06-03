@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { motion } from "framer-motion";
 
 // Components
+import Social from "@/components/Social";
 import Button from "@/components/Button";
 
 // Utils
@@ -96,6 +97,10 @@ export default function Aside({
                 link={lenguage ? english.header.link : spanish.header.link}
                 text={lenguage ? english.header.button : spanish.header.button}
               />
+            </motion.li>
+
+            <motion.li variants={aside__item}>
+              <Social />
             </motion.li>
           </ul>
         </nav>
