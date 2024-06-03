@@ -92,6 +92,13 @@ export const spanish: Lenguage = {
       },
       {
         github: "",
+        title: "Love",
+        website: "https://lovelct.com/",
+        technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+        text: "Proyecto freelance en el cual construí una página web profesional para un cliente, mostrando detalladamente sus servicios y contacto.",
+      },
+      {
+        github: "",
         title: "Dominique",
         technologies: ["JavaScript", "WordPress"],
         website: "https://dominiquepanczuch.com/",

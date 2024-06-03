@@ -92,6 +92,13 @@ export const english: Lenguage = {
       },
       {
         github: "",
+        title: "Love",
+        website: "https://lovelct.com/",
+        technologies: ["React.js", "TypeScript", "Tailwind CSS"],
+        text: "Freelance project in which I built a professional website for a client, showcasing their services and detailed contact information.",
+      },
+      {
+        github: "",
         title: "Dominique",
         technologies: ["JavaScript", "WordPress"],
         website: "https://dominiquepanczuch.com/",
