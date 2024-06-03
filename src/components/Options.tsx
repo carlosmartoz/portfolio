@@ -3,7 +3,7 @@
 
 // Icons
 import Dark from "@/icons/Dark";
-import Light from "@/icons/light";
+import Light from "@/icons/Light";
 
 // React
 import { useContext } from "react";
