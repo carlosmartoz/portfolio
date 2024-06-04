@@ -36,7 +36,14 @@ export default function Cards({
     <>
       <section className="card">
         <header className="card__header">
-          <h2 className="card__title">{title}</h2>
+          <a
+            href={website}
+            target="_blank"
+            className="card__title"
+            rel="noopener noreferrer"
+          >
+            {title}
+          </a>
 
           <ul className="card__links">
             <li>

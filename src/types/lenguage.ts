@@ -13,8 +13,9 @@ export interface Lenguage {
   };
   intro: {
     text: string;
-    subtitle: string;
+    quote: string;
     button: string;
+    subtitle: string;
   };
   about: {
     title: string;

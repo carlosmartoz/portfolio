@@ -29,7 +29,7 @@ export default function Projects() {
   };
 
   // Context
-  const { lenguage } = useContext(ThemeContext);
+  const { lenguage, isReady } = useContext(ThemeContext);
 
   // Hook to check if the section is in view
   const isInView = useInView(ref, { once: true });
@@ -43,6 +43,9 @@ export default function Projects() {
       transition: { delay: 0.2, duration: 0.2, staggerChildren: 0.2 },
     },
   };
+
+  // Projects
+  const projects = lenguage ? english.projects.cards : spanish.projects.cards;
 
   return (
     <>
@@ -59,29 +62,18 @@ export default function Projects() {
         </h2>
 
         <ul className="projects__cards">
-          {lenguage
-            ? english.projects.cards.map((card) => (
-                <motion.li key={card.title} variants={section__item}>
-                  <Cards
-                    title={card.title}
-                    github={card.github}
-                    website={card.website}
-                    description={card.text}
-                    technologies={card.technologies}
-                  />
-                </motion.li>
-              ))
-            : spanish.projects.cards.map((card) => (
-                <motion.li key={card.title} variants={section__item}>
-                  <Cards
-                    title={card.title}
-                    github={card.github}
-                    website={card.website}
-                    description={card.text}
-                    technologies={card.technologies}
-                  />
-                </motion.li>
-              ))}
+          {isReady &&
+            projects.map((card) => (
+              <motion.li key={card.title} variants={section__item}>
+                <Cards
+                  title={card.title}
+                  github={card.github}
+                  website={card.website}
+                  description={card.text}
+                  technologies={card.technologies}
+                />
+              </motion.li>
+            ))}
         </ul>
       </motion.section>
     </>

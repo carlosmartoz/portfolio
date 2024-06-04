@@ -14,6 +14,7 @@ import { createContext, useEffect, useState } from "react";
 
 // Context
 export const ThemeContext = createContext<Context>({
+  isReady: false,
   lenguage: false,
   isMobile: false,
   prevScrollPos: 0,
@@ -33,6 +34,9 @@ export default function ThemeProvider({
   // Hook to control the light/dark mode
   const [colorMode, setColorMode] = useColorMode();
 
+  // Set ready
+  const [isReady, setIsReady] = useState<boolean>(false);
+
   // Set the lenguage
   const [lenguage, setLenguage] = useState<boolean>(false);
 
@@ -41,16 +45,20 @@ export default function ThemeProvider({
 
   // Set effect
   useEffect(() => {
-    // Check if the navigator is defined
-    if (typeof navigator !== "undefined") {
-      // Set the lenguage
-      setLenguage(navigator.language.toLowerCase() === "es-419" ? false : true);
-    }
+    // Set ready
+    setIsReady(true);
   }, []);
+
+  // Set effect
+  useEffect(() => {
+    // Change the lang attribute of the html element based on the value of setLenguage
+    document.documentElement.lang = lenguage ? "en" : "es";
+  }, [lenguage]);
 
   return (
     <ThemeContext.Provider
       value={{
+        isReady,
         lenguage,
         isMobile,
         colorMode,

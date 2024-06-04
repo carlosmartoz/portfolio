@@ -19,9 +19,10 @@ export const spanish: Lenguage = {
     ariaLabelMenu: "Botón de menú para dispositivos móviles",
   },
   intro: {
-    button: "Sobre mi",
-    subtitle: "Hola, mi nombre es",
-    text: "Soy un desarrollador Front-End apasionado por crear páginas web <br /> que destacan por su estilo único.",
+    button: "Contáctame",
+    text: "Hola, mi nombre es",
+    subtitle: "Soy Desarrollador Front-End y graduado en Ingeniería Informática. Me especializo en la creación y maquetación de interfaces de usuario para la web",
+    quote: "Soy un desarrollador Front-End apasionado por crear páginas web <br /> que destacan por su estilo único.",
   },
   about: {
     resume: "Curriculum",
@@ -30,7 +31,7 @@ export const spanish: Lenguage = {
     ariaLabelGithub: "Enlace a mi perfil de Github",
     ariaLabelLinkedin: "Enlace a mi perfil de LinkedIn",
     text1:
-      "Soy Desarrollador Front-End y graduado en Ingeniería Informática. Me especializo en la creación y maquetación de interfaces de usuario para la web utilizando tecnologías como HTML5, CSS3, JavaScript, TypeScript, React.js/Next.js, entre otras. También tengo experiencia en conceptualizar diseños web con Figma.",
+      "Actualmente trabajo con tecnologías como HTML5, CSS3, JavaScript, TypeScript, React.js / Next.js, entre otras. También tengo experiencia en conceptualizar diseños web con Figma.",
     text2:
       "Además, he trabajado en el Back-End para complementar el Front-End con Node.js y ocasionalmente en proyectos con WordPress.",
     text3:

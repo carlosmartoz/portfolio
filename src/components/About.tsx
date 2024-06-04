@@ -85,24 +85,28 @@ export default function About() {
 
             <div className="about__links">
               <Button
+                external
                 link={common.linkedin}
                 text={common.linkedinText}
                 icon={<Linkedin width={20} height={20} className="icon" />}
               />
 
               <Button
+                external
                 link={common.github}
                 text={common.githubText}
                 icon={<Github width={20} height={20} className="icon" />}
               />
 
               <Button
+                external
                 link={common.email}
                 text={common.emailText}
                 icon={<Email width={20} height={20} className="icon" />}
               />
 
               <Button
+                external
                 text={lenguage ? english.about.resume : spanish.about.resume}
                 link={
                   lenguage ? english.about.resumeLink : spanish.about.resumeLink

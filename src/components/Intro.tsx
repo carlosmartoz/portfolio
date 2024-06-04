@@ -53,22 +53,26 @@ export default function Intro() {
         className="introduction"
       >
         <div className="introduction__container">
-          <motion.h3
-            variants={section__item}
-            className="introduction__subtitle"
-          >
-            {lenguage ? english.intro.subtitle : spanish.intro.subtitle}
+          <motion.h3 variants={section__item} className="introduction__text">
+            {lenguage ? english.intro.text : spanish.intro.text}
           </motion.h3>
 
           <motion.h1 variants={section__item} className="introduction__title">
             {common.name}
           </motion.h1>
 
+          <motion.h2
+            variants={section__item}
+            className="introduction__subtitle"
+          >
+            {lenguage ? english.intro.subtitle : spanish.intro.subtitle}
+          </motion.h2>
+
           <motion.p
             variants={section__item}
-            className="introduction__text"
+            className="introduction__quote"
             dangerouslySetInnerHTML={{
-              __html: lenguage ? english.intro.text : spanish.intro.text,
+              __html: lenguage ? english.intro.quote : spanish.intro.quote,
             }}
           />
         </div>

@@ -91,6 +91,7 @@ export default function Menu() {
 
               <motion.li variants={menu__item} className="menu__item">
                 <Button
+                  external
                   link={lenguage ? english.header.link : spanish.header.link}
                   text={
                     lenguage ? english.header.button : spanish.header.button

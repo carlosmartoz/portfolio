@@ -3,6 +3,7 @@
 
 // Next
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 // React
 import { useContext } from "react";
@@ -19,9 +20,9 @@ import { ThemeContext } from "@/context/context";
 
 // Components
 import Logo from "@/components/Logo";
-import Aside from "@/components/Aside";
 import Options from "@/components/Options";
 import Hamburguer from "@/components/Hamburguer";
+const Aside = dynamic(() => import("@/components/Aside"));
 
 // Hooks
 import { useOpenMenu } from "@/hooks/useOpenMenu";

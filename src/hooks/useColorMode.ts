@@ -6,41 +6,25 @@ export const useColorMode = (): [
   boolean,
   React.Dispatch<React.SetStateAction<boolean>>
 ] => {
-  // Set the colormode
+  // Leer el valor de localStorage o usar false por defecto
   const [colorMode, setColorMode] = useState<boolean>(false);
 
-  // Set effect
   useEffect(() => {
-    // Add or remove the colorMode class to the document element
-    document.documentElement.classList.toggle("colorMode", colorMode);
-  }, [colorMode]);
-
-  // Set effect
-  useEffect(() => {
-    // Check if the user prefers light mode
-    const prefersLightMode = window.matchMedia(
-      "(prefers-color-scheme: light)"
-    ).matches;
-
-    // Set the colormode
-    setColorMode(prefersLightMode);
-
-    // Event listener
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-
-    // Function to handle the change in the user's preference
-    const handleChange = () => {
-      setColorMode(mediaQuery.matches);
-    };
-
-    // Add the event listener
-    mediaQuery.addEventListener("change", handleChange);
-
-    // Remove the event listener
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
+    if (typeof window !== "undefined") {
+      const savedColorMode = localStorage.getItem("colorMode");
+      if (savedColorMode !== null) {
+        setColorMode(JSON.parse(savedColorMode));
+      }
+    }
   }, []);
+
+  // Efecto para actualizar la clase y localStorage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.documentElement.classList.toggle("colorMode", colorMode);
+      localStorage.setItem("colorMode", JSON.stringify(colorMode));
+    }
+  }, [colorMode]);
 
   return [colorMode, setColorMode];
 };

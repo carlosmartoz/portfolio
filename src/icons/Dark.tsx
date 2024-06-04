@@ -1,4 +1,4 @@
-// Component
+// Icon
 export default function Dark({
   width,
   height,

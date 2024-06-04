@@ -1,4 +1,4 @@
-// Component
+// Icon
 export default function Light({
   width,
   height,

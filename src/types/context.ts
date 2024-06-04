@@ -1,5 +1,6 @@
 // Types
 export interface Context {
+  isReady: boolean;
   lenguage: boolean;
   isMobile: boolean;
   colorMode: boolean;

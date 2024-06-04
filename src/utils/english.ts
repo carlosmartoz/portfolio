@@ -19,9 +19,10 @@ export const english: Lenguage = {
     ],
   },
   intro: {
-    button: "About Me",
-    subtitle: "Hello, my name is",
-    text: "I'm a Front-End Developer passionate about creating web pages <br /> that stand out for their unique style.",
+    button: "Contact Me",
+    text: "Hello, my name is",
+    subtitle: "I'm a Front-End Developer and a Informatics Engineering graduate. I specialize in creating and designing user interfaces for the web",
+    quote: "I'm a Front-End Developer passionate about creating web pages <br /> that stand out for their unique style.",
   },
   about: {
     resume: "Resume",
@@ -30,7 +31,7 @@ export const english: Lenguage = {
     ariaLabelGithub: "Link to my Github profile",
     ariaLabelLinkedin: "Link to my LinkedIn profile",
     text1:
-      "I'm a Front-End Developer and a Informatics Engineering graduate. I specialize in creating and designing user interfaces for the web using technologies such as HTML5, CSS3, JavaScript, TypeScript, React.js/Next.js, among others. I also have experience in conceptualizing web designs with Figma.",
+      "I currently work with technologies such as HTML5, CSS3, JavaScript, TypeScript, React.js / Next.js, among others. I also have experience in conceptualizing web designs with Figma.",
     text2:
       "Additionally, I have worked on the Back-End to complement the Front-End with Node.js and occasionally on projects with WordPress.",
     text3:
