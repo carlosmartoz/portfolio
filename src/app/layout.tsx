@@ -34,6 +34,7 @@ const firaCode = Fira_Code({
 export const metadata: Metadata = {
   generator: "Next.js",
   category: "portfolio",
+  title: "Carlos Martínez",
   creator: "Carlos Martínez",
   robots: {
     index: false,
@@ -53,26 +54,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://carlosmartoz.com/"),
   keywords: ["Portafolio", "Portfolio", "Carlos Martínez"],
   authors: [{ name: "Carlos", url: "https://carlosmartoz.com/" }],
-  title: "Carlos Martínez",
-  description:
-    "Front-End Developer passionate about creating web pages with unique style.",
-  openGraph: {
-    type: "website",
-    title: "Carlos Martínez",
-    siteName: "Carlos Martínez",
-    url: "https://carlosmartoz.com/",
-    images: "/images/opengraph-image.png",
-    description:
-      "Front-End Developer passionate about creating web pages with unique style.",
-  },
-  twitter: {
-    title: "Carlos Martínez",
-    creator: "@carlosamartoz",
-    card: "summary_large_image",
-    images: "/images/twitter-image.png",
-    description:
-      "Front-End Developer passionate about creating web pages with unique style.",
-  },
   icons: {
     shortcut: {
       sizes: "32x32",
@@ -133,6 +114,25 @@ export const metadata: Metadata = {
         url: "/icons/apple-touch-icon-512.png",
       },
     ],
+  },
+  description:
+    "Front-End Developer passionate about creating web pages with unique style.",
+  openGraph: {
+    type: "website",
+    title: "Carlos Martínez",
+    siteName: "Carlos Martínez",
+    url: "https://carlosmartoz.com/",
+    images: "/images/opengraph-image.png",
+    description:
+      "Front-End Developer passionate about creating web pages with unique style.",
+  },
+  twitter: {
+    title: "Carlos Martínez",
+    creator: "@carlosamartoz",
+    card: "summary_large_image",
+    images: "/images/twitter-image.png",
+    description:
+      "Front-End Developer passionate about creating web pages with unique style.",
   },
 };
 

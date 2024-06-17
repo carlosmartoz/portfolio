@@ -6,9 +6,10 @@ export const useColorMode = (): [
   boolean,
   React.Dispatch<React.SetStateAction<boolean>>
 ] => {
-  // Leer el valor de localStorage o usar false por defecto
+  // Set color mode
   const [colorMode, setColorMode] = useState<boolean>(false);
 
+  // Effect to get the color mode from the local storage
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedColorMode = localStorage.getItem("colorMode");
@@ -18,10 +19,11 @@ export const useColorMode = (): [
     }
   }, []);
 
-  // Efecto para actualizar la clase y localStorage
+  // Effect to add or remove the class to the html
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.documentElement.classList.toggle("colorMode", colorMode);
+
       localStorage.setItem("colorMode", JSON.stringify(colorMode));
     }
   }, [colorMode]);

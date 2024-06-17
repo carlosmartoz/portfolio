@@ -1,5 +1,4 @@
 module.exports = {
-  
   env: {
     browser: true,
     es2021: true,
@@ -26,6 +25,5 @@ module.exports = {
       files: [".eslintrc.{js,cjs}"],
     },
   ],
-
   rules: { "@typescript-eslint/triple-slash-reference": "off" },
 };

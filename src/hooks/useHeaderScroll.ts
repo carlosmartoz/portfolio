@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 // Hook
 export const useHeaderScroll = (): [boolean, number] => {
-  // Set the previous scroll position
+  // Set previous scroll position
   const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
 
-  // Set the header visibility
+  // Set header visibility
   const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
 
   // Set effect

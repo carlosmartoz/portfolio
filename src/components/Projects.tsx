@@ -28,11 +28,11 @@ export default function Projects() {
     hidden: { opacity: 0, y: 32 },
   };
 
-  // Context
-  const { lenguage, isReady } = useContext(ThemeContext);
-
   // Hook to check if the section is in view
   const isInView = useInView(ref, { once: true });
+
+  // Context
+  const { lenguage, isReady } = useContext(ThemeContext);
 
   // Set section variant
   const section = {

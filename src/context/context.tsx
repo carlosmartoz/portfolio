@@ -11,6 +11,7 @@ import { useHeaderScroll } from "@/hooks/useHeaderScroll";
 
 // React
 import { createContext, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 // Context
 export const ThemeContext = createContext<Context>({
@@ -31,13 +32,24 @@ export default function ThemeProvider({
   // Hook to determine the device type
   const [isMobile] = useDeviceType();
 
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirigir a la página de inicio al recargar
+    if (typeof window !== 'undefined') {
+      window.onbeforeunload = () => {
+        router.push('/');
+      };
+    }
+  }, [router]);
+
   // Hook to control the light/dark mode
   const [colorMode, setColorMode] = useColorMode();
 
   // Set ready
   const [isReady, setIsReady] = useState<boolean>(false);
 
-  // Set the lenguage
+  // Set lenguage
   const [lenguage, setLenguage] = useState<boolean>(false);
 
   // Hook to control the header visibility

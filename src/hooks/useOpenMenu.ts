@@ -6,7 +6,7 @@ export const useOpenMenu = (): [
   boolean,
   React.Dispatch<React.SetStateAction<boolean>>
 ] => {
-  // Set the openMenu
+  // Set openMenu
   const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   // Set effect

@@ -3,26 +3,26 @@ import { useState, useEffect } from "react";
 
 // Hook
 export const useDeviceType = (): [boolean, boolean, boolean] => {
-  // Set the mobile device
+  // Set mobile device
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Set the tablet device
+  // Set tablet device
   const [isTablet, setIsTablet] = useState<boolean>(false);
 
-  // Set the desktop device
+  // Set desktop device
   const [isDesktop, setIsDesktop] = useState<boolean>(false);
 
   // Set effect
   useEffect(() => {
     // Function to handle the resize event
     function handleResize() {
-      // Set the mobile device
+      // Set mobile device
       setIsMobile(window.innerWidth < 768);
 
-      // Set the tablet device
+      // Set tablet device
       setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
 
-      // Set the desktop device
+      // Set desktop device
       setIsDesktop(window.innerWidth >= 1024);
     }
 
