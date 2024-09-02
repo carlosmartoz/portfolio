@@ -7,7 +7,7 @@ export const spanish: Lenguage = {
     lenguage: "EN",
     button: "Curriculum",
     logo: "Logo de mi portafolio",
-    link: "/curriculum-carlos-martinez.pdf",
+    link: "/carlos-martinez-curriculum.pdf",
     menu: [
       { text: "Introducción", link: "#introduction" },
       { text: "Acerca de mí", link: "#about" },
@@ -27,7 +27,7 @@ export const spanish: Lenguage = {
   about: {
     resume: "Curriculum",
     title: "Acerca de mí",
-    resumeLink: "/curriculum-carlos-martinez.pdf",
+    resumeLink: "/carlos-martinez-curriculum.pdf",
     ariaLabelGithub: "Enlace a mi perfil de Github",
     ariaLabelLinkedin: "Enlace a mi perfil de LinkedIn",
     text1:

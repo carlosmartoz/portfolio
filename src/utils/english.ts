@@ -7,7 +7,7 @@ export const english: Lenguage = {
     lenguage: "ES",
     button: "Resume",
     logo: "My portfolio logo",
-    link: "/resume-carlos-martinez.pdf",
+    link: "/carlos-martinez-resume.pdf",
     ariaLabelDark: "Button to switch to dark mode",
     ariaLabelMenu: "button for mobile devices menu",
     ariaLabelLenguage: "Button to switch to spanish",
@@ -27,7 +27,7 @@ export const english: Lenguage = {
   about: {
     resume: "Resume",
     title: "About Me",
-    resumeLink: "/resume-carlos-martinez.pdf",
+    resumeLink: "/carlos-martinez-resume.pdf",
     ariaLabelGithub: "Link to my Github profile",
     ariaLabelLinkedin: "Link to my LinkedIn profile",
     text1:
