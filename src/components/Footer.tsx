@@ -31,6 +31,7 @@ export default function Footer() {
   useEffect(() => {
     // Function to get repository statistics
     getRepositoryStatistics();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Context

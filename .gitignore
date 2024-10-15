@@ -1,24 +1,25 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+/node_modules
 /.pnp
 .pnp.js
-/node_modules
+.yarn/install-state.gz
 package-lock.json
 
 # testing
 /coverage
 
 # next.js
-/out/
 /.next/
+/out/
 
 # production
 /build
 
 # misc
-*.pem
 .DS_Store
+*.pem
 
 # debug
 npm-debug.log*

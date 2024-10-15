@@ -36,21 +36,23 @@ export const metadata: Metadata = {
   category: "portfolio",
   title: "Carlos Martínez",
   creator: "Carlos Martínez",
-  robots: {
-    index: false,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      "max-snippet": -1,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-    },
-  },
-  manifest: "/manifest.webmanifest",
   referrer: "origin-when-cross-origin",
+  description: "Carlos Martínez's Portfolio.",
+  openGraph: {
+    type: "website",
+    title: "Carlos Martínez",
+    siteName: "Carlos Martínez",
+    url: "https://carlosmartoz.com/",
+    images: "/images/opengraph-image.png",
+    description: "Carlos Martínez's Portfolio.",
+  },
+  twitter: {
+    title: "Carlos Martínez",
+    creator: "@carlosamartoz",
+    card: "summary_large_image",
+    images: "/images/twitter-image.png",
+    description: "Carlos Martínez's Portfolio.",
+  },
   metadataBase: new URL("https://carlosmartoz.com/"),
   keywords: ["Portafolio", "Portfolio", "Carlos Martínez"],
   authors: [{ name: "Carlos", url: "https://carlosmartoz.com/" }],
@@ -61,16 +63,6 @@ export const metadata: Metadata = {
       url: "/icons/favicon.ico",
     },
     icon: [
-      { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/favicon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icons/favicon-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/icons/favicon-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/icons/favicon-512.png", sizes: "512x512", type: "image/png" },
-      { url: "/icons/android-icon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/android-icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/android-icon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icons/android-icon-64.png", sizes: "64x64", type: "image/png" },
       {
         sizes: "128x128",
         type: "image/png",
@@ -81,6 +73,16 @@ export const metadata: Metadata = {
         type: "image/png",
         url: "/icons/android-icon-512.png",
       },
+      { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/icons/favicon-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/icons/favicon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/icons/android-icon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/android-icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/android-icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/android-icon-64.png", sizes: "64x64", type: "image/png" },
     ],
     apple: [
       {
@@ -114,25 +116,6 @@ export const metadata: Metadata = {
         url: "/icons/apple-touch-icon-512.png",
       },
     ],
-  },
-  description:
-    "Front-End Developer passionate about creating web pages with unique style.",
-  openGraph: {
-    type: "website",
-    title: "Carlos Martínez",
-    siteName: "Carlos Martínez",
-    url: "https://carlosmartoz.com/",
-    images: "/images/opengraph-image.png",
-    description:
-      "Front-End Developer passionate about creating web pages with unique style.",
-  },
-  twitter: {
-    title: "Carlos Martínez",
-    creator: "@carlosamartoz",
-    card: "summary_large_image",
-    images: "/images/twitter-image.png",
-    description:
-      "Front-End Developer passionate about creating web pages with unique style.",
   },
 };
 

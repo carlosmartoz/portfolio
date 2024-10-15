@@ -39,6 +39,8 @@ export async function repositoryStatistics(
       setError(true);
     }
   } catch (error) {
+    console.log(error);
+
     // Set loading
     setLoading(false);
 
