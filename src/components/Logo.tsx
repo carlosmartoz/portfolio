@@ -6,12 +6,12 @@ export default function Logo({
   width: number;
   height: number;
 }) {
+  // Return
   return (
     <>
       <svg
         width={width}
         height={height}
-        className="logo"
         aria-hidden="true"
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"

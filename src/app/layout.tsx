@@ -4,9 +4,6 @@ import "@/styles/globals.css";
 // Next
 import type { Metadata } from "next";
 
-// Context
-import ThemeProvider from "@/context/context";
-
 // Fonts
 import { Fira_Code, Inter } from "next/font/google";
 
@@ -36,6 +33,12 @@ export const metadata: Metadata = {
   category: "portfolio",
   title: "Carlos Martínez",
   creator: "Carlos Martínez",
+  keywords: [
+    "Portafolio",
+    "Portfolio",
+    "Carlos Martínez",
+    "Carlos Martínez's Portfolio",
+  ],
   referrer: "origin-when-cross-origin",
   description: "Carlos Martínez's Portfolio.",
   openGraph: {
@@ -54,7 +57,6 @@ export const metadata: Metadata = {
     description: "Carlos Martínez's Portfolio.",
   },
   metadataBase: new URL("https://carlosmartoz.com/"),
-  keywords: ["Portafolio", "Portfolio", "Carlos Martínez"],
   authors: [{ name: "Carlos", url: "https://carlosmartoz.com/" }],
   icons: {
     shortcut: {
@@ -125,9 +127,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <html className={`html ${inter.variable} ${firaCode.variable}`}>
-        <body className="body">
-          <ThemeProvider>{children}</ThemeProvider>
+      <html
+        className={`min-h-svh scroll-smooth transition-all ease-in-out duration-[200ms] bg-dark ${inter.variable} ${firaCode.variable}`}
+      >
+        <body className="min-h-svh bg-transparent">
+          {children}
 
           <Analytics />
 

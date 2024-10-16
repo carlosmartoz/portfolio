@@ -1,9 +1,9 @@
 {
   "exclude": ["node_modules"],
   "compilerOptions": {
-    "allowJs": true,
     "strict": true,
     "noEmit": true,
+    "allowJs": true,
     "plugins": [
       {
         "name": "next"

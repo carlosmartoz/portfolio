@@ -4,112 +4,66 @@
 // Next
 import Link from "next/link";
 
-// React
-import { useContext } from "react";
-
-// Framer Motion
-import { motion } from "framer-motion";
-
-// Utils
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
-
 // Components
 import Logo from "@/components/Logo";
 import Button from "@/components/Button";
 import Social from "@/components/Social";
 import Options from "@/components/Options";
 
-// Context
-import { ThemeContext } from "@/context/context";
-
 // Component
 export default function Menu() {
-  // Set menu item variant
-  const menu__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -32 },
-  };
+  // Menu items
+  const menuItems = [
+    { text: "Introduction", link: "#introduction" },
+    { text: "About Me", link: "#about" },
+    { text: "Projects", link: "#projects" },
+  ];
 
-  // Context
-  const { lenguage } = useContext(ThemeContext);
-
-  // Set menu variant
-  const menu = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
-  };
-
+  // Return
   return (
-    <motion.ul
-      variants={menu}
-      initial="hidden"
-      className="menu"
-      animate="visible"
-    >
-      <motion.li variants={menu__item}>
-        <Link
-          href="/"
-          aria-label="Logo"
-          title={lenguage ? english.header.logo : spanish.header.logo}
-        >
+    <ul className="w-full hidden lg:flex items-center justify-between">
+      <li>
+        <Link href="/" aria-label="Logo" title="Logo">
           <Logo width={48} height={48} />
         </Link>
-      </motion.li>
+      </li>
 
       <li>
-        <ul className="menu__container">
+        <ul className="flex items-center gap-8">
           <li>
-            <ul className="menu__inner">
-              {lenguage
-                ? english.header.menu.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      variants={menu__item}
-                      className="menu__item"
-                    >
-                      <a href={`/${item.link}`} className="menu__link">
-                        {item.text}
-                      </a>
+            <ul className="gap-4 flex items-center">
+              {menuItems.map((item, index) => (
+                <li key={index} className="gap-4 flex items-center">
+                  <a
+                    href={`/${item.link}`}
+                    className="font-fira font-normal text-sm transition-all duration-[200ms] ease-in-out text-gray hover:text-red"
+                  >
+                    {item.text}
+                  </a>
 
-                      <span className="menu__separator">-</span>
-                    </motion.li>
-                  ))
-                : spanish.header.menu.map((item, index) => (
-                    <motion.li
-                      key={index}
-                      variants={menu__item}
-                      className="menu__item"
-                    >
-                      <a href={`/${item.link}`} className="menu__link">
-                        {item.text}
-                      </a>
+                  <span className="text-red">-</span>
+                </li>
+              ))}
 
-                      <span className="menu__separator">-</span>
-                    </motion.li>
-                  ))}
-
-              <motion.li variants={menu__item} className="menu__item">
+              <li className="gap-4 flex items-center">
                 <Button
                   external
-                  link={lenguage ? english.header.link : spanish.header.link}
-                  text={
-                    lenguage ? english.header.button : spanish.header.button
-                  }
+                  text="Resume"
+                  link="/carlos-martinez-resume.pdf"
                 />
-              </motion.li>
+              </li>
             </ul>
           </li>
 
-          <motion.li variants={menu__item} className="menu__item">
+          <li className="gap-4 flex items-center">
             <Social />
-          </motion.li>
+          </li>
 
-          <motion.li variants={menu__item} className="menu__item">
+          <li className="gap-4 flex items-center">
             <Options />
-          </motion.li>
+          </li>
         </ul>
       </li>
-    </motion.ul>
+    </ul>
   );
 }

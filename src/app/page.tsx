@@ -1,10 +1,10 @@
 // Components
-import Main from "@/components/Main";
-import Intro from "@/components/Intro";
-import About from "@/components/About";
-import Footer from "@/components/Footer";
+// import Main from "@/components/Main";
+// import Intro from "@/components/Intro";
+// import About from "@/components/About";
+// import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Projects from "@/components/Projects";
+// import Projects from "@/components/Projects";
 
 // Page
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
 
-      <Main>
+      {/* <Main>
         <Intro />
 
         <About />
@@ -20,7 +20,7 @@ export default function Home() {
         <Projects />
       </Main>
 
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

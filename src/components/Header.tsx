@@ -1,34 +1,28 @@
 // Client Component
 "use client";
 
-// React
-import { useContext } from "react";
-
 // Components
 import Menu from "@/components/Menu";
 import Mobile from "@/components/Mobile";
 
-// Context
-import { ThemeContext } from "@/context/context";
+// Hooks
+import { useHeaderScroll } from "@/hooks/useHeaderScroll";
 
 // Component
 export default function Header() {
-  // Context
-  const { isHeaderVisible, prevScrollPos } = useContext(ThemeContext);
+  // Hook to control the header visibility
+  const [isHeaderVisible, prevScrollPos] = useHeaderScroll();
 
   return (
     <>
       <header
-        className="header"
-        style={{
-          boxShadow:
-            prevScrollPos > 32 && isHeaderVisible
-              ? "var(--shadow-normal)"
-              : "none",
-          transform: isHeaderVisible ? "translateY(0)" : "translateY(-100%)",
-        }}
+        className={`top-0 left-0 w-full z-50 fixed bg-dark ${
+          prevScrollPos > 32 && isHeaderVisible
+            ? "shadow-normal"
+            : "shadow-none"
+        } ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <nav className="nav">
+        <nav className="flex items-center justify-between p-6">
           <Menu />
 
           <Mobile />
