@@ -5,77 +5,41 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-// React
-import { useContext } from "react";
-
-// Framer Motion
-import { motion } from "framer-motion";
-
-// Utils
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
-
-// Context
-import { ThemeContext } from "@/context/context";
-
-// Components
-import Logo from "@/components/Logo";
-import Options from "@/components/Options";
-import Hamburguer from "@/components/Hamburguer";
-const Aside = dynamic(() => import("@/components/Aside"));
+import { IoMdMenu } from "react-icons/io";
 
 // Hooks
 import { useOpenMenu } from "@/hooks/useOpenMenu";
 
+// Components
+import Logo from "@/components/Logo";
+const Aside = dynamic(() => import("@/components/Aside"));
+
 // Component
 export default function Mobile() {
-  // Set menu item variant
-  const menu__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: -32 },
-  };
-
-  // Context
-  const { lenguage } = useContext(ThemeContext);
-
   // Hook to control the open / close state of the menu
   const [openMenu, setOpenMenu] = useOpenMenu();
 
-  // Set menu variant
-  const menu = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.2 } },
-  };
-
+  // Return
   return (
     <>
-      <motion.ul
-        initial="hidden"
-        variants={menu}
-        animate="visible"
-        className="mobile"
-      >
-        <motion.li variants={menu__item}>
-          <Link
-            href="/"
-            title={lenguage ? english.header.logo : spanish.header.logo}
-          >
+      <ul className="lg:hidden w-full items-center justify-between">
+        <li>
+          <Link href="/" title="Logo">
             <Logo width={48} height={48} />
           </Link>
-        </motion.li>
+        </li>
 
         <li>
-          <ul className="mobile__inner">
-            <motion.li variants={menu__item}>
-              <Options />
-            </motion.li>
-
-            <motion.li variants={menu__item}>
-              <Hamburguer openMenu={openMenu} setOpenMenu={setOpenMenu} />
-            </motion.li>
+          <ul className="gap-4 flex items-center">
+            <li
+              className="text-light text-2xl"
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <IoMdMenu />
+            </li>
           </ul>
         </li>
-      </motion.ul>
+      </ul>
 
       <Aside openMenu={openMenu} setOpenMenu={setOpenMenu} />
     </>

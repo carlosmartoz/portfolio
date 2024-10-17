@@ -1,46 +1,41 @@
-// Icons
-import Email from "@/icons/Email";
-import Github from "@/icons/Github";
-import Linkedin from "@/icons/Linkedin";
-
-// Utils
-import { common } from "@/utils/common";
+// React Icons
+import { FaGithub, FaRegEnvelope, FaLinkedinIn } from "react-icons/fa";
 
 // Component
 export default function Social() {
   return (
     <>
-      <ul className="social">
+      <ul className="gap-2 flex items-center">
         <li>
           <a
             target="_blank"
-            href={common.github}
-            className="social__icon"
             rel="noopener noreferrer"
+            href="https://github.com/carlosmartoz"
+            className="text-light transition-all ease-in-out duration-[200ms] hover:text-red text-xl"
           >
-            <Github width={24} height={24} />
+            <FaGithub />
           </a>
         </li>
 
         <li>
           <a
             target="_blank"
-            href={common.linkedin}
-            className="social__icon"
             rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/carlosmartoz"
+            className="text-light transition-all ease-in-out duration-[200ms] hover:text-red text-xl"
           >
-            <Linkedin width={24} height={24} />
+            <FaLinkedinIn />
           </a>
         </li>
 
         <li>
           <a
             target="_blank"
-            href={common.email}
-            className="social__icon"
             rel="noopener noreferrer"
+            href="mailto:carlosmrtzo@gmail.com"
+            className="text-light transition-all ease-in-out duration-[200ms] hover:text-red text-xl"
           >
-            <Email width={24} height={24} />
+            <FaRegEnvelope />
           </a>
         </li>
       </ul>

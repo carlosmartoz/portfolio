@@ -1,6 +1,3 @@
-// Client Component
-"use client";
-
 // Next
 import Link from "next/link";
 
@@ -8,7 +5,6 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 import Button from "@/components/Button";
 import Social from "@/components/Social";
-import Options from "@/components/Options";
 
 // Component
 export default function Menu() {
@@ -57,10 +53,6 @@ export default function Menu() {
 
           <li className="gap-4 flex items-center">
             <Social />
-          </li>
-
-          <li className="gap-4 flex items-center">
-            <Options />
           </li>
         </ul>
       </li>

@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   title: "Carlos Martínez",
   creator: "Carlos Martínez",
   keywords: [
-    "Portafolio",
     "Portfolio",
+    "Portafolio",
     "Carlos Martínez",
     "Carlos Martínez's Portfolio",
   ],
@@ -64,28 +64,6 @@ export const metadata: Metadata = {
       type: "image/x-icon",
       url: "/icons/favicon.ico",
     },
-    icon: [
-      {
-        sizes: "128x128",
-        type: "image/png",
-        url: "/icons/android-icon-128.png",
-      },
-      {
-        sizes: "512x512",
-        type: "image/png",
-        url: "/icons/android-icon-512.png",
-      },
-      { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/favicon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icons/favicon-64.png", sizes: "64x64", type: "image/png" },
-      { url: "/icons/favicon-128.png", sizes: "128x128", type: "image/png" },
-      { url: "/icons/favicon-512.png", sizes: "512x512", type: "image/png" },
-      { url: "/icons/android-icon-16.png", sizes: "16x16", type: "image/png" },
-      { url: "/icons/android-icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icons/android-icon-48.png", sizes: "48x48", type: "image/png" },
-      { url: "/icons/android-icon-64.png", sizes: "64x64", type: "image/png" },
-    ],
     apple: [
       {
         sizes: "16x16",
@@ -118,6 +96,28 @@ export const metadata: Metadata = {
         url: "/icons/apple-touch-icon-512.png",
       },
     ],
+    icon: [
+      {
+        sizes: "128x128",
+        type: "image/png",
+        url: "/icons/android-icon-128.png",
+      },
+      {
+        sizes: "512x512",
+        type: "image/png",
+        url: "/icons/android-icon-512.png",
+      },
+      { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/icons/favicon-128.png", sizes: "128x128", type: "image/png" },
+      { url: "/icons/favicon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/icons/android-icon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/android-icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/android-icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icons/android-icon-64.png", sizes: "64x64", type: "image/png" },
+    ],
   },
 };
 
@@ -128,7 +128,7 @@ export default function RootLayout({
   return (
     <>
       <html
-        className={`min-h-svh scroll-smooth transition-all ease-in-out duration-[200ms] bg-dark ${inter.variable} ${firaCode.variable}`}
+        className={`min-h-svh scroll-smooth bg-dark ${inter.variable} ${firaCode.variable}`}
       >
         <body className="min-h-svh bg-transparent">
           {children}
