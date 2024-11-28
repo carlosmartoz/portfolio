@@ -31,6 +31,8 @@ export default function Options() {
   return (
     <>
       <section className="flex items-center gap-4">
+        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
+
         <ul className="hidden items-center gap-2 lg:flex">
           {menuItems.map((social, index) => (
             <li key={index}>
@@ -39,7 +41,7 @@ export default function Options() {
                 href={social.link}
                 aria-label={social.label}
                 rel="noopener noreferrer"
-                className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
+                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
               >
                 {social.icon}
               </Link>
@@ -47,10 +49,7 @@ export default function Options() {
           ))}
         </ul>
 
-        <span
-          aria-label="separator"
-          className="hidden h-px w-2 bg-red lg:block"
-        />
+        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
 
         <ul className="relative z-50 flex items-center gap-2">
           <li className="relative">

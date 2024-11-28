@@ -19,7 +19,7 @@ export default function Main({
       <main
         className={`${openMenu ? "pointer-events-none min-h-svh touch-none select-none blur-sm lg:pointer-events-auto lg:touch-auto lg:select-auto lg:blur-0" : "min-h-svh"}`}
       >
-        <article className="relative mx-auto flex min-h-svh w-full flex-col gap-24 px-6 lg:max-w-5xl xl:px-0">
+        <article className="relative mx-auto flex min-h-svh w-full flex-col gap-12 px-6 lg:max-w-5xl xl:px-0">
           {children}
         </article>
       </main>

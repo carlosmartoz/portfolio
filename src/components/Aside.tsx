@@ -36,11 +36,11 @@ export default function Aside() {
         <ul className="flex flex-col items-center gap-6">
           {menu.map((menu) => (
             <li key={menu} className="flex items-center gap-4">
-              <span className="h-px w-2 bg-red" aria-label="separator" />
+              <span className="h-px w-2 bg-red" aria-hidden="true" />
 
               <Link
                 href={t(`${menu}.link`)}
-                className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red md:text-xl dark:text-dark dark:hover:text-dark-red"
+                className="font-fira text-lg font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red md:text-xl dark:text-dark dark:hover:text-dark-red"
               >
                 {t(`${menu}.label`)}
               </Link>
@@ -60,7 +60,7 @@ export default function Aside() {
                 href={social.link}
                 aria-label={social.label}
                 rel="noopener noreferrer"
-                className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red md:text-2xl dark:text-dark"
+                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
               >
                 {social.icon}
               </Link>

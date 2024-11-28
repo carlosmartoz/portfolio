@@ -31,7 +31,7 @@ export default function Nav() {
               {t(`${menu}.label`)}
             </Link>
 
-            <span className="h-px w-2 bg-red" aria-label="separator" />
+            <span className="h-px w-2 bg-red" aria-hidden="true" />
           </li>
         ))}
 

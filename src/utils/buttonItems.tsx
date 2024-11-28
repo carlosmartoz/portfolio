@@ -15,7 +15,7 @@ export const buttonItems: ButtonItems = [
         external
         text="Github"
         link="https://github.com/carlosmartoz"
-        icon={<FaGithub className="text-xl" />}
+        icon={<FaGithub className="text-xl" aria-hidden="true" />}
       />
     ),
   },
@@ -24,7 +24,7 @@ export const buttonItems: ButtonItems = [
       <Button
         external
         text="LinkedIn"
-        icon={<FaLinkedin className="text-xl" />}
+        icon={<FaLinkedin className="text-xl" aria-hidden="true" />}
         link="https://www.linkedin.com/in/carlosmartoz"
       />
     ),
@@ -35,7 +35,7 @@ export const buttonItems: ButtonItems = [
         external
         text="e-mail"
         link="mailto:carlosmrtzo@gmail.com"
-        icon={<FaRegEnvelope className="text-xl" />}
+        icon={<FaRegEnvelope className="text-xl" aria-hidden="true" />}
       />
     ),
   },

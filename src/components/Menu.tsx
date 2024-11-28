@@ -27,7 +27,7 @@ export default function Menu() {
         onClick={() => {
           setOpenMenu(!openMenu);
         }}
-        aria-label={openMenu ? "Close menu" : "Menu"}
+        aria-label={openMenu ? "close menu" : "menu"}
         className="relative z-50 flex h-8 w-9 items-center justify-center lg:hidden"
       >
         <span

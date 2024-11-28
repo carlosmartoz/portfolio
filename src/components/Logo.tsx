@@ -16,7 +16,9 @@ export default function Logo() {
           <span className="relative flex h-full items-center justify-center overflow-hidden shadow-inset">
             <span className="absolute -left-6 bottom-[-1px] top-0 block w-0 skew-x-[30deg] bg-red transition-all duration-[300ms] ease-in-out group-hover:w-[200%]"></span>
 
-            <span className="relative -rotate-45">C</span>
+            <span className="relative -rotate-45" aria-hidden="true">
+              C
+            </span>
           </span>
         </span>
       </Link>

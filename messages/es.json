@@ -20,6 +20,7 @@
   "about": {
     "buttonLabel": "Curriculum",
     "buttonLink": "/carlos-martinez-curriculum.pdf",
-    "description": "Front-End Developer con experiencia en Next.js/React.js. Apasionado por crear interfaces web con un estilo único, especializado en transformar diseños de Figma a código de alta fidelidad, integrar APIs y optimizar interacciones en tiempo real. Comprometido con la creación de interfaces eficientes y de alta calidad."
+    "description1": "Front-End Developer con experiencia en Next.js y React.js. Apasionado por crear interfaces web con un estilo único",
+    "description2": "Especializado en transformar diseños de Figma a código de alta fidelidad, integrar APIs y optimizar interacciones en tiempo real. Comprometido con la creación de interfaces eficientes y de alta calidad."
   }
 }

@@ -138,7 +138,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`min-h-svh scroll-smooth bg-dark ${inter.variable} ${firaCode.variable}`}
+      className={`min-h-svh scroll-smooth bg-dark transition-all duration-[400ms] ease-in-out dark:bg-light ${inter.variable} ${firaCode.variable}`}
     >
       <body className="min-h-svh">
         <NextIntlClientProvider messages={messages}>
