@@ -1,12 +1,12 @@
+/* Tailwind */
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
 
+/* Custom CSS */
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 12px;
+  width: 1px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: var(--color-red);
+  background: #ff0000;
 }

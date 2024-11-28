@@ -1,21 +1,33 @@
+// Styles
 import "@/styles/globals.css";
+
+// Next
 import type { Metadata } from "next";
 import { Fira_Code, Inter } from "next/font/google";
+
+// Next intl
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+
+// Vercel
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// Font
 const inter = Inter({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
+// Font
 const firaCode = Fira_Code({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-fira-code",
 });
 
+// Metadata
 export const metadata: Metadata = {
   generator: "Next.js",
   category: "Portfolio",
@@ -110,18 +122,28 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+// Layout
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Locale
+  const locale = await getLocale();
+
+  // Messages
+  const messages = await getMessages();
+
+  // Return
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`min-h-svh scroll-smooth bg-dark ${inter.variable} ${firaCode.variable}`}
     >
       <body className="min-h-svh">
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
 
         <Analytics />
 
