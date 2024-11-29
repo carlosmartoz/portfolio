@@ -22,7 +22,7 @@ import { useColorMode } from "@/hooks/useColorMode";
 // Component
 export default function Options() {
   // Translations
-  const t = useTranslations("header");
+  const tHeader = useTranslations("header");
 
   // Color mode
   const [colorMode, setColorMode] = useColorMode();
@@ -56,12 +56,12 @@ export default function Options() {
             <button
               type="button"
               onClick={() =>
-                setUserLocale(t("lenguage") === "es" ? "es" : "en")
+                setUserLocale(tHeader("lenguage") === "es" ? "es" : "en")
               }
-              aria-label={t("lenguage") === "es" ? "spanish" : "english"}
-              className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark dark:hover:text-dark-red"
+              aria-label={tHeader("lenguage") === "es" ? "spanish" : "english"}
+              className="text-lg text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red"
             >
-              {t("lenguageLabel")}
+              {tHeader("lenguageLabel")}
             </button>
           </li>
 
@@ -72,7 +72,7 @@ export default function Options() {
               className="flex items-center"
               onClick={() => setColorMode(!colorMode)}
             >
-              <VscColorMode className="rotate-180 text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:rotate-0 dark:text-dark" />
+              <VscColorMode className="rotate-180 text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:rotate-0 dark:text-dark" />
             </button>
           </li>
         </ul>

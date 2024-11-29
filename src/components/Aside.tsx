@@ -22,10 +22,13 @@ export default function Aside() {
   const { openMenu } = useOpenMenu();
 
   // Translations
-  const t = useTranslations("header");
+  const tLinks = useTranslations("links");
+
+  // Translations
+  const tHeader = useTranslations("header");
 
   // Menu
-  const menu = ["about", "experience", "projects"] as const;
+  const menu = ["about", "projects"] as const;
 
   // Return
   return (
@@ -39,16 +42,20 @@ export default function Aside() {
               <span className="h-px w-2 bg-red" aria-hidden="true" />
 
               <Link
-                href={t(`${menu}.link`)}
-                className="font-fira text-lg font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red md:text-xl dark:text-dark dark:hover:text-dark-red"
+                href={tLinks(`${menu}.link`)}
+                className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-lg md:text-xl dark:text-dark dark:hover:text-dark-red"
               >
-                {t(`${menu}.label`)}
+                {tLinks(`${menu}.label`)}
               </Link>
             </li>
           ))}
 
           <li className="ml-3">
-            <Button external link={t("buttonLink")} text={t("buttonLabel")} />
+            <Button
+              external
+              link={tHeader("buttonLink")}
+              text={tHeader("buttonLabel")}
+            />
           </li>
         </ul>
 
@@ -60,7 +67,7 @@ export default function Aside() {
                 href={social.link}
                 aria-label={social.label}
                 rel="noopener noreferrer"
-                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
+                className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:text-dark"
               >
                 {social.icon}
               </Link>

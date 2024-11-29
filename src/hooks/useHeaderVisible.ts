@@ -17,8 +17,8 @@ export const useHeaderVisible = (): [boolean, number] => {
       const currentScrollPos = window.pageYOffset;
 
       // Check the scroll position
-      if (currentScrollPos <= 56) {
-        // Set the header to visible if the scroll position is less than or equal to 56
+      if (currentScrollPos <= 32) {
+        // Set the header to visible if the scroll position is less than or equal to 32
         setIsHeaderVisible(true);
       } else if (prevScrollPos < currentScrollPos && isHeaderVisible) {
         // Set the header to hidden if the scroll position is greater than the previous scroll position

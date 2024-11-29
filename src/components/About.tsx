@@ -7,55 +7,53 @@ import Button from "@/components/Button";
 // Next intl
 import { useTranslations } from "next-intl";
 
-// React icons
-import { FaRegFileAlt } from "react-icons/fa";
-
 // Utils
-import { buttonItems } from "@/utils/buttonItems";
 import { staticTexts } from "@/utils/staticTexts";
+
+// React icons
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 // Component
 export default function About() {
   // Translations
-  const t = useTranslations("about");
+  const tAbout = useTranslations("about");
+  const tLinks = useTranslations("links");
 
   // Return
   return (
     <>
       <section
         id="about"
-        className="mt-32 flex min-h-svh flex-col justify-center gap-2 xs:mt-24 2xs:mt-12 sm:gap-4 lg:mt-2"
+        className="flex min-h-svh flex-col justify-center gap-2 sm:gap-4"
       >
-        <h1 className="font-inter text-4xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out md:text-5xl lg:text-7xl dark:text-dark">
+        <h1 className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark">
           {staticTexts.name}
         </h1>
 
-        <h2 className="font-inter text-3xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out md:text-5xl lg:text-7xl dark:text-dark">
+        <h2 className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark">
           {staticTexts.role}
         </h2>
 
-        <p className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out md:w-[90%] lg:w-[70%] dark:text-dark">
-          {t("description1")}
+        <p className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark">
+          {tAbout("description1")}
         </p>
 
-        <p className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out md:w-[90%] lg:w-[70%] dark:text-dark">
-          {t("description2")}
+        <p className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark">
+          {tAbout("description2")}
         </p>
 
-        <ul className="mt-2 flex flex-wrap items-center gap-4 sm:mt-0 md:gap-6">
-          {buttonItems.map((item, index) => (
-            <li key={index}>{item.button}</li>
-          ))}
-
-          <li>
-            <Button
-              external
-              link={t("buttonLink")}
-              text={t("buttonLabel")}
-              icon={<FaRegFileAlt className="text-xl" aria-hidden="true" />}
-            />
-          </li>
-        </ul>
+        <div className="mt-2 self-start">
+          <Button
+            text={tAbout("buttonLabel")}
+            link={tLinks("projects.link")}
+            icon={
+              <FaAngleDoubleDown
+                aria-hidden="true"
+                className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light"
+              />
+            }
+          />
+        </div>
       </section>
     </>
   );

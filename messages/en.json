@@ -1,25 +1,22 @@
 {
-  "header": {
-    "lenguage": "es",
+  "links": {
     "about": {
-      "label": "About",
-      "link": "#about"
+      "link": "#about",
+      "label": "About"
     },
     "projects": {
-      "label": "Projects",
-      "link": "#projects"
-    },
+      "link": "#projects",
+      "label": "Projects"
+    }
+  },
+  "header": {
+    "lenguage": "es",
     "lenguageLabel": "ESP",
-    "experience": {
-      "label": "Experience",
-      "link": "#experience"
-    },
     "buttonLabel": "Resume",
     "buttonLink": "/carlos-martinez-resume.pdf"
   },
   "about": {
-    "buttonLabel": "Resume",
-    "buttonLink": "/carlos-martinez-resume.pdf",
+    "buttonLabel": "My projects",
     "description1": "Front-End Developer with experience in Next.js/React.js. Passionate about crafting unique web interfaces.",
     "description2": "Specializing in converting Figma designs into high-fidelity code, integrating APIs, and optimizing real-time interactions. Committed to building efficient and high-quality interfaces."
   }
