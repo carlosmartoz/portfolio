@@ -1,6 +1,9 @@
 // Client component
 "use client";
 
+// Framer Motion
+import { motion } from "framer-motion";
+
 // Components
 import Button from "@/components/Button";
 
@@ -26,23 +29,63 @@ export default function About() {
         id="about"
         className="flex min-h-svh flex-col justify-center gap-2 sm:gap-4"
       >
-        <h1 className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark">
+        <motion.h1
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 0.6 },
+            y: { delay: 0.6, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark"
+        >
           {staticTexts.name}
-        </h1>
+        </motion.h1>
 
-        <h2 className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark">
+        <motion.h2
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 0.8 },
+            y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark"
+        >
           {staticTexts.role}
-        </h2>
+        </motion.h2>
 
-        <p className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark">
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.0 },
+            y: { delay: 1.0, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+        >
           {tAbout("description1")}
-        </p>
+        </motion.p>
 
-        <p className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark">
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.2 },
+            y: { delay: 1.2, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+        >
           {tAbout("description2")}
-        </p>
+        </motion.p>
 
-        <div className="mt-2 self-start">
+        <motion.section
+          className="mt-2 self-start"
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.4 },
+            y: { delay: 1.4, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+        >
           <Button
             text={tAbout("buttonLabel")}
             link={tLinks("projects.link")}
@@ -53,7 +96,7 @@ export default function About() {
               />
             }
           />
-        </div>
+        </motion.section>
       </section>
     </>
   );
