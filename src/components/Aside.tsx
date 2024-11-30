@@ -4,31 +4,28 @@
 // Next
 import Link from "next/link";
 
+// Utils
+import { social } from "@/utils/social";
+
 // Components
 import Button from "@/components/Button";
 
+// Types
+import { type Links } from "@/types/links";
+
 // Next intl
 import { useTranslations } from "next-intl";
-
-// Utils
-import { menuItems } from "@/utils/menuItems";
 
 // Stores
 import { useOpenMenu } from "@/stores/useOpenMenu";
 
 // Component
 export default function Aside() {
+  // Translations
+  const t = useTranslations();
+
   // Use open menu
   const { openMenu } = useOpenMenu();
-
-  // Translations
-  const tLinks = useTranslations("links");
-
-  // Translations
-  const tHeader = useTranslations("header");
-
-  // Menu
-  const menu = ["about", "projects"] as const;
 
   // Return
   return (
@@ -37,15 +34,15 @@ export default function Aside() {
         className={`fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 bg-dark px-8 shadow-normal transition-all duration-[400ms] ease-in-out xs:w-[calc(100%-128px)] lg:hidden dark:bg-light ${openMenu ? "right-0" : "-right-full"}`}
       >
         <ul className="flex flex-col items-center gap-6">
-          {menu.map((menu) => (
-            <li key={menu} className="flex items-center gap-4">
+          {t.raw("links").map((item: Links) => (
+            <li key={item.label} className="flex items-center gap-4">
               <span className="h-px w-2 bg-red" aria-hidden="true" />
 
               <Link
-                href={tLinks(`${menu}.link`)}
+                href={item.link}
                 className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-lg md:text-xl dark:text-dark dark:hover:text-dark-red"
               >
-                {tLinks(`${menu}.label`)}
+                {item.label}
               </Link>
             </li>
           ))}
@@ -53,23 +50,23 @@ export default function Aside() {
           <li className="ml-3">
             <Button
               external
-              link={tHeader("buttonLink")}
-              text={tHeader("buttonLabel")}
+              link={t.raw("header").buttonLink}
+              text={t.raw("header").buttonLabel}
             />
           </li>
         </ul>
 
         <ul className="flex items-center gap-4">
-          {menuItems.map((social, index) => (
+          {social.map((item, index) => (
             <li key={index}>
               <Link
                 target="_blank"
-                href={social.link}
-                aria-label={social.label}
+                href={item.link}
+                aria-label={item.label}
                 rel="noopener noreferrer"
                 className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:text-dark"
               >
-                {social.icon}
+                {item.icon}
               </Link>
             </li>
           ))}

@@ -1,11 +1,11 @@
 // Types
-import { type MenuItems } from "@/types/menuItems";
+import { type Social } from "@/types/social";
 
 // React icons
 import { FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
 // Utils
-export const menuItems: MenuItems = [
+export const social: Social = [
   {
     label: "github",
     icon: <FaGithub aria-hidden="true" />,

@@ -7,31 +7,28 @@ import Link from "next/link";
 // Components
 import Button from "@/components/Button";
 
+// Types
+import { type Links } from "@/types/links";
+
 // Next intl
 import { useTranslations } from "next-intl";
 
 // Component
 export default function Nav() {
   // Translations
-  const tLinks = useTranslations("links");
-
-  // Translations
-  const tHeader = useTranslations("header");
-
-  // Menu
-  const menu = ["about", "projects"] as const;
+  const t = useTranslations();
 
   // Return
   return (
     <>
       <ul className="flex items-center gap-4">
-        {menu.map((menu) => (
-          <li key={menu} className="flex items-center gap-4">
+        {t.raw("links").map((item: Links, index: any) => (
+          <li key={index} className="flex items-center gap-4">
             <Link
-              href={tLinks(`${menu}.link`)}
+              href={item.link}
               className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark dark:hover:text-dark-red"
             >
-              {tLinks(`${menu}.label`)}
+              {item.label}
             </Link>
 
             <span className="h-px w-2 bg-red" aria-hidden="true" />
@@ -41,8 +38,8 @@ export default function Nav() {
         <li>
           <Button
             external
-            link={tHeader("buttonLink")}
-            text={tHeader("buttonLabel")}
+            link={t.raw("header").buttonLink}
+            text={t.raw("header").buttonLabel}
           />
         </li>
       </ul>

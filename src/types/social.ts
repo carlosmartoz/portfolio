@@ -1,9 +1,9 @@
 // Interface
-interface MenuItem {
+interface Item {
   link: string;
   label: string;
   icon: React.ReactNode;
 }
 
 // Type
-export type MenuItems = MenuItem[];
+export type Social = Item[];

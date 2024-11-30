@@ -1,14 +1,14 @@
 {
-  "links": {
-    "about": {
+  "links": [
+    {
       "link": "#about",
       "label": "Sobre mi"
     },
-    "projects": {
+    {
       "link": "#projects",
       "label": "Projectos"
     }
-  },
+  ],
   "header": {
     "lenguage": "en",
     "lenguageLabel": "ENG",
@@ -19,5 +19,77 @@
     "buttonLabel": "Mis projectos",
     "description1": "Front-End Developer con experiencia en Next.js y React.js. Apasionado por crear interfaces web con un estilo único",
     "description2": "Especializado en transformar diseños de Figma a código de alta fidelidad, integrar APIs y optimizar interacciones en tiempo real. Comprometido con la creación de interfaces eficientes y de alta calidad."
-  }
+  },
+  "projects": [
+    {
+      "github": "",
+      "title": "Mindara",
+      "link": "https://app.mindara.ai/",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "description": "Lideré el desarrollo Front-End de Mindara, integrando APIs, gestionando el estado global y desarrollando un chat con IA para la plataforma."
+    },
+    {
+      "github": "",
+      "title": "Dominique",
+      "technologies": ["WordPress"],
+      "link": "https://dominiquepanczuch.com/",
+      "description": "Desarrollé el portafolio web Dominique, con WordPress y un tema personalizado para mostrar el trabajo de una fotógrafa profesional."
+    },
+    {
+      "github": "",
+      "title": "Love",
+      "link": "https://lovelct.com/",
+      "technologies": ["React.js", "TypeScript", "Tailwind CSS"],
+      "description": "Desarrollé una landing page para la marca Love, destacando un estilo minimalista, limpio y funcional que refleja la identidad de la marca."
+    },
+    {
+      "title": "Pokémon Shop",
+      "link": "https://pokemon-shop-three.vercel.app/",
+      "github": "https://github.com/carlosmartoz/pokemon-shop",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "description": "Creé una tienda con la API de Pokémon, implementé paginación, carrito, integré una API de cambio de moneda y guardé datos en el navegador."
+    },
+    {
+      "title": "Knockout.js Test",
+      "link": "https://knockoutjs-test.vercel.app/",
+      "technologies": ["HTML & CSS3", "JavaScript", "JQuery"],
+      "github": "https://github.com/carlosmartoz/knockoutjs-test",
+      "description": "Desarrollé un login ficticio, integré una API para mostrar productos y creé un formulario para agregar nuevos productos con Bootstrap y Knockout.js."
+    },
+    {
+      "title": "Bill Calculator",
+      "technologies": ["HTML5 & CSS3", "JavaScript"],
+      "link": "https://bill-calculator-phi.vercel.app/",
+      "github": "https://github.com/carlosmartoz/bill-calculator",
+      "description": "Creé una calculadora de facturas usando JavaScript, aplicando reglas específicas para cálculos precisos y garantizando su funcionalidad."
+    },
+    {
+      "title": "Pokédex",
+      "technologies": ["React.js", "JavaScript"],
+      "link": "https://pokedex-vert-nine.vercel.app/",
+      "github": "https://github.com/carlosmartoz/pokedex",
+      "description": "Desarrollé una Pokédex con la API de Pokémon, implementando paginación y ajustando estilos según el tipo de Pokémon, mostrando sus datos."
+    },
+    {
+      "title": "Pokémon TCG",
+      "link": "https://pokemon-tcg-sigma.vercel.app/",
+      "github": "https://github.com/carlosmartoz/pokemon-tcg",
+      "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+      "description": "Creé una Pokédex de cartas TCG con la API de Pokémon TCG, implementando paginación y ajustando estilos según el tipo de carta."
+    },
+    {
+      "title": "Hackers News",
+      "technologies": ["React.js", "TypeScript"],
+      "link": "https://hackers-news-ruby.vercel.app/",
+      "github": "https://github.com/carlosmartoz/hackers-news",
+      "description": "Repliqué Hacker News, consumí su API para mostrar artículos y permití guardar favoritos en el navegador con almacenamiento local."
+    },
+    {
+      "title": "Task Manager",
+      "technologies": ["React.js", "JavaScript"],
+      "link": "https://task-manager-two-fawn.vercel.app/",
+      "github": "https://github.com/carlosmartoz/task-manager",
+      "description": "Desarrollé un gestor de tareas donde se pueden crear, editar, eliminar y marcar como completadas, permitiendo una gestión eficiente."
+    }
+  ]
 }

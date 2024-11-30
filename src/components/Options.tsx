@@ -4,11 +4,11 @@
 // Next
 import Link from "next/link";
 
+// Utils
+import { social } from "@/utils/social";
+
 // Next intl
 import { useTranslations } from "next-intl";
-
-// Utils
-import { menuItems } from "@/utils/menuItems";
 
 // React icons
 import { VscColorMode } from "react-icons/vsc";
@@ -22,7 +22,7 @@ import { useColorMode } from "@/hooks/useColorMode";
 // Component
 export default function Options() {
   // Translations
-  const tHeader = useTranslations("header");
+  const t = useTranslations();
 
   // Color mode
   const [colorMode, setColorMode] = useColorMode();
@@ -34,16 +34,16 @@ export default function Options() {
         <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
 
         <ul className="hidden items-center gap-2 lg:flex">
-          {menuItems.map((social, index) => (
+          {social.map((item, index) => (
             <li key={index}>
               <Link
                 target="_blank"
-                href={social.link}
-                aria-label={social.label}
+                href={item.link}
+                aria-label={item.label}
                 rel="noopener noreferrer"
                 className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
               >
-                {social.icon}
+                {item.icon}
               </Link>
             </li>
           ))}
@@ -55,13 +55,15 @@ export default function Options() {
           <li className="relative">
             <button
               type="button"
-              onClick={() =>
-                setUserLocale(tHeader("lenguage") === "es" ? "es" : "en")
+              aria-label={
+                t.raw("header").lenguage === "es" ? "spanish" : "english"
               }
-              aria-label={tHeader("lenguage") === "es" ? "spanish" : "english"}
+              onClick={() =>
+                setUserLocale(t.raw("header").lenguage === "es" ? "es" : "en")
+              }
               className="text-lg text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red"
             >
-              {tHeader("lenguageLabel")}
+              {t.raw("header").lenguageLabel}
             </button>
           </li>
 
