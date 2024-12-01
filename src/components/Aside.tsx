@@ -57,8 +57,8 @@ export default function Aside() {
         </ul>
 
         <ul className="flex items-center gap-4">
-          {social.map((item, index) => (
-            <li key={index}>
+          {social.map((item) => (
+            <li key={item.label}>
               <Link
                 target="_blank"
                 href={item.link}

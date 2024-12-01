@@ -35,11 +35,7 @@ export default function Header() {
 
         <motion.section
           transition={{
-            opacity: {
-              delay: 0.6,
-            },
             y: {
-              delay: 0.6,
               duration: 0.4,
               type: "spring",
               ease: "easeInOut",

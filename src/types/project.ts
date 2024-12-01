@@ -1,8 +1,8 @@
 // Type
 export type Project = {
-  link: string;
   title: string;
   github: string;
+  website: string;
   description: string;
   technologies: string[];
 };

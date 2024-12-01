@@ -34,8 +34,8 @@ export default function Options() {
         <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
 
         <ul className="hidden items-center gap-2 lg:flex">
-          {social.map((item, index) => (
-            <li key={index}>
+          {social.map((item) => (
+            <li key={item.label}>
               <Link
                 target="_blank"
                 href={item.link}

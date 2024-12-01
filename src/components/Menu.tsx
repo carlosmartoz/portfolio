@@ -36,7 +36,7 @@ export default function Menu() {
               ? "h-[1.5px] rotate-[225deg] before:top-0 before:h-[1.5px] before:w-full before:rotate-90 after:top-0 after:h-[1.5px] after:w-full after:rotate-90 after:opacity-0"
               : "h-[2px] before:h-[2px] after:h-[2px]"
           }`}
-        ></span>
+        />
       </button>
     </>
   );
