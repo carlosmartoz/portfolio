@@ -43,20 +43,28 @@ export default function Projects() {
   // Return
   return (
     <>
-      <section id="projects" className="flex min-h-svh flex-col gap-4 md:gap-8">
-        <h3 className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark">
-          {t.raw("links")[1].label}
-        </h3>
-
-        <motion.ul
+      <motion.section
+        id="projects"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        className="flex min-h-svh flex-col gap-4 md:gap-8"
+      >
+        <motion.h3
+          custom={0}
           initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          whileInView="visible"
+          variants={itemVariants}
+          viewport={{ once: true, amount: 0.1 }}
+          className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark"
         >
+          {t.raw("links")[1].label}
+        </motion.h3>
+
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {t.raw("projects").map((project: Project, index: number) => (
             <motion.li
-              custom={index}
+              custom={index + 1}
               initial="hidden"
               key={project.title}
               whileInView="visible"
@@ -66,8 +74,8 @@ export default function Projects() {
               <Card {...project} />
             </motion.li>
           ))}
-        </motion.ul>
-      </section>
+        </ul>
+      </motion.section>
     </>
   );
 }
