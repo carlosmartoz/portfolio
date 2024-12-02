@@ -28,7 +28,7 @@ export default function Header() {
         <motion.section
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut", type: "tween" }}
+          transition={{ duration: 0.8, ease: "easeInOut", type: "tween" }}
         >
           <Logo />
         </motion.section>
@@ -36,13 +36,13 @@ export default function Header() {
         <motion.section
           transition={{
             y: {
-              duration: 0.4,
+              duration: 0.8,
               type: "spring",
               ease: "easeInOut",
             },
           }}
           animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -12 }}
+          initial={{ opacity: 0, y: -24 }}
           className="flex items-center gap-4"
         >
           <nav className="hidden lg:block">
