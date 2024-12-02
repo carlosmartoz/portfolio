@@ -44,15 +44,9 @@ export default function Projects() {
   return (
     <>
       <section id="projects" className="flex min-h-svh flex-col gap-4 md:gap-8">
-        <motion.h3
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: "easeInOut", type: "tween" }}
-          className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark"
-        >
+        <h3 className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark">
           {t.raw("links")[1].label}
-        </motion.h3>
+        </h3>
 
         <motion.ul
           initial="hidden"

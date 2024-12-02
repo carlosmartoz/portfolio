@@ -4,9 +4,6 @@
 // Next
 import Link from "next/link";
 
-// Framer Motion
-import { motion } from "framer-motion";
-
 // Next intl
 import { useTranslations } from "next-intl";
 
@@ -21,13 +18,7 @@ export default function Footer() {
   // Return
   return (
     <>
-      <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.8, ease: "easeInOut", type: "tween" }}
-        className="flex w-full items-center justify-center py-12 lg:py-6"
-      >
+      <footer className="flex w-full items-center justify-center py-12 lg:py-6">
         <Link
           target="_blank"
           rel="noopener noreferrer"
@@ -40,7 +31,7 @@ export default function Footer() {
           />
           {t.raw("footer").text}
         </Link>
-      </motion.footer>
+      </footer>
     </>
   );
 }

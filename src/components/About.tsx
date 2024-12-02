@@ -32,8 +32,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -12 }}
           transition={{
-            opacity: { delay: 0.4 },
-            y: { delay: 0.4, duration: 0.0, ease: "easeInOut", type: "spring" },
+            opacity: { delay: 0.8 },
+            y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
           className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark"
         >
@@ -44,8 +44,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -12 }}
           transition={{
-            opacity: { delay: 0.5 },
-            y: { delay: 0.5, duration: 0.0, ease: "easeInOut", type: "spring" },
+            opacity: { delay: 0.9 },
+            y: { delay: 0.9, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
           className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark"
         >
@@ -56,8 +56,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -12 }}
           transition={{
-            opacity: { delay: 0.6 },
-            y: { delay: 0.6, duration: 0.0, ease: "easeInOut", type: "spring" },
+            opacity: { delay: 1.0 },
+            y: { delay: 1.0, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
           className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
         >
@@ -68,8 +68,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -12 }}
           transition={{
-            opacity: { delay: 0.7 },
-            y: { delay: 0.7, duration: 0.0, ease: "easeInOut", type: "spring" },
+            opacity: { delay: 1.1 },
+            y: { delay: 1.1, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
           className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
         >
@@ -81,8 +81,8 @@ export default function About() {
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: -12 }}
           transition={{
-            opacity: { delay: 0.8 },
-            y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
+            opacity: { delay: 1.2 },
+            y: { delay: 1.2, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
         >
           <Button
