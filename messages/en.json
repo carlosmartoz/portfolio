@@ -1,0 +1,98 @@
+{
+  "links": [
+    {
+      "link": "#about",
+      "label": "About"
+    },
+    {
+      "link": "#projects",
+      "label": "Projects"
+    }
+  ],
+  "header": {
+    "lenguage": "es",
+    "lenguageLabel": "ESP",
+    "buttonLabel": "Resume",
+    "buttonLink": "/carlos-martinez-resume.pdf"
+  },
+  "about": {
+    "buttonLabel": "My projects",
+    "description1": "Front-End Developer with experience in Next.js/React.js. Passionate about crafting unique web interfaces.",
+    "description2": "Specializing in converting Figma designs into high-fidelity code, integrating APIs, and optimizing real-time interactions. Committed to building efficient and high-quality interfaces."
+  },
+  "projects": [
+    {
+      "github": "",
+      "title": "Mindara",
+      "website": "https://app.mindara.ai/",
+      "technologies": ["Next.js", "TypeScript", "Tailwind"],
+      "description": "Led Front-End development of Mindara, integrating APIs, managing global state, and developing an AI chat for the platform."
+    },
+    {
+      "github": "",
+      "title": "Dominique",
+      "technologies": ["WordPress"],
+      "website": "https://dominiquepanczuch.com/",
+      "description": "Developed the Dominique web portfolio with WordPress and a custom theme to showcase a professional photographer's work."
+    },
+    {
+      "github": "",
+      "title": "Love",
+      "website": "https://lovelct.com/",
+      "technologies": ["React.js", "TypeScript", "Tailwind"],
+      "description": "Developed a landing page for Love, featuring a minimalist, clean, and functional style that reflects the brand’s identity."
+    },
+    {
+      "title": "Pokémon Shop",
+      "website": "https://pokemon-shop-three.vercel.app/",
+      "technologies": ["Next.js", "TypeScript", "Tailwind"],
+      "github": "https://github.com/carlosmartoz/pokemon-shop",
+      "description": "Built a store using Pokémon API, implemented pagination, cart, integrated a currency exchange API, and stored data in the browser."
+    },
+    {
+      "title": "Knockout.js Test",
+      "website": "https://knockoutjs-test.vercel.app/",
+      "technologies": ["HTML & CSS3", "JavaScript", "JQuery"],
+      "github": "https://github.com/carlosmartoz/knockoutjs-test",
+      "description": "Developed a mock login, integrated an API to display products, and created a form to add new products using Bootstrap and Knockout.js."
+    },
+    {
+      "title": "Bill Calculator",
+      "technologies": ["HTML5 & CSS3", "JavaScript"],
+      "website": "https://bill-calculator-phi.vercel.app/",
+      "github": "https://github.com/carlosmartoz/bill-calculator",
+      "description": "Built an invoice calculator using JavaScript, applying specific rules for accurate calculations and ensuring functionality."
+    },
+    {
+      "title": "Pokédex",
+      "technologies": ["React.js", "JavaScript"],
+      "website": "https://pokedex-vert-nine.vercel.app/",
+      "github": "https://github.com/carlosmartoz/pokedex",
+      "description": "Built a Pokédex with Pokémon API, implementing pagination and adjusting styles based on Pokémon type, displaying their data."
+    },
+    {
+      "title": "Pokémon TCG",
+      "website": "https://pokemon-tcg-sigma.vercel.app/",
+      "github": "https://github.com/carlosmartoz/pokemon-tcg",
+      "technologies": ["Next.js", "TypeScript", "Tailwind"],
+      "description": "Built a TCG card Pokédex with the Pokémon TCG API, implementing pagination and adjusting styles based on card type."
+    },
+    {
+      "title": "Hackers News",
+      "technologies": ["React.js", "TypeScript"],
+      "website": "https://hackers-news-ruby.vercel.app/",
+      "github": "https://github.com/carlosmartoz/hackers-news",
+      "description": "Replicated Hacker News, consumed its API to display articles, and enabled saving favorites in the browser with local storage."
+    },
+    {
+      "title": "Task Manager",
+      "technologies": ["React.js", "JavaScript"],
+      "website": "https://task-manager-two-fawn.vercel.app/",
+      "github": "https://github.com/carlosmartoz/task-manager",
+      "description": "Built a task manager where tasks can be created, edited, deleted, and marked as completed, enabling efficient management."
+    }
+  ],
+  "footer": {
+    "text": "Created by Carlos Martínez."
+  }
+}

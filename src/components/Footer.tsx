@@ -1,87 +1,44 @@
-// Client Component
+// Client component
 "use client";
 
-// Icons
-import Star from "@/icons/Star";
-import Branch from "@/icons/Branch";
-
-// Utils
-import { common } from "@/utils/common";
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
-
-// Context
-import { ThemeContext } from "@/context/context";
+// Next
+import Link from "next/link";
 
 // Framer Motion
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-// React
-import { useContext, useEffect, useRef } from "react";
+// Next intl
+import { useTranslations } from "next-intl";
 
-// Hooks
-import { useRepositoryStatistics } from "@/hooks/useRepositoryStatistics";
+// React icons
+import { IoIosGitBranch } from "react-icons/io";
 
 // Component
 export default function Footer() {
-  // Ref
-  const ref = useRef(null);
+  // Translations
+  const t = useTranslations();
 
-  // Set effect
-  useEffect(() => {
-    // Function to get repository statistics
-    getRepositoryStatistics();
-  }, []);
-
-  // Context
-  const { lenguage } = useContext(ThemeContext);
-
-  // Set footer variant
-  const footer = {
-    hidden: { opacity: 0, y: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { delay: 0.2, duration: 0.2 },
-    },
-  };
-
-  // Hook to check if the section is in view
-  const isInView = useInView(ref, { once: true });
-
-  // Hook for get repository statistics
-  const [stars, error, loading, getRepositoryStatistics] =
-    useRepositoryStatistics();
-
+  // Return
   return (
     <>
       <motion.footer
-        ref={ref}
-        initial="hidden"
-        className="footer"
-        variants={footer}
-        animate={isInView ? "visible" : "hidden"}
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ delay: 1.2, duration: 0.4, ease: "easeInOut" }}
+        className="flex w-full items-center justify-center py-12 lg:py-6"
       >
-        <a
+        <Link
           target="_blank"
-          className="footer__link"
-          href={common.repository}
           rel="noopener noreferrer"
+          href="https://github.com/carlosmartoz/portfolio"
+          className="flex gap-2 font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-base dark:text-dark dark:hover:text-dark-red"
         >
-          {error || loading ? (
-            <span className="footer__icon">
-              <Branch width={18} height={18} />
-            </span>
-          ) : (
-            <span className="footer__icon">
-              <Star width={18} height={18} />
-
-              <p>{stars}</p>
-            </span>
-          )}
-
-          {lenguage ? english.footer.text : spanish.footer.text}
-        </a>
+          <IoIosGitBranch
+            className="text-xl text-red xs:text-2xl"
+            aria-hidden="true"
+          />
+          {t.raw("footer").text}
+        </Link>
       </motion.footer>
     </>
   );

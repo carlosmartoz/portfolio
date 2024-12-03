@@ -1,4 +1,0 @@
-Allow: /
-User-Agent: *
-Disallow: /private/
-Sitemap: https://www.carlosmartoz.com/sitemap.xml

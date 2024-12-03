@@ -1,20 +1,18 @@
 // Components
 import Main from "@/components/Main";
-import Intro from "@/components/Intro";
 import About from "@/components/About";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Projects from "@/components/Projects";
 
 // Page
 export default function Home() {
+  // Return
   return (
     <>
       <Header />
 
       <Main>
-        <Intro />
-
         <About />
 
         <Projects />

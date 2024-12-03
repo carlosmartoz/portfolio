@@ -1,125 +1,102 @@
-// Client Component
+// Client component
 "use client";
 
-// Icons
-import Email from "@/icons/Email";
-import Github from "@/icons/Github";
-import Linkedin from "@/icons/Linkedin";
+// Framer Motion
+import { motion } from "framer-motion";
 
 // Components
-import Avatar from "@/components/Avatar";
 import Button from "@/components/Button";
 
+// Next intl
+import { useTranslations } from "next-intl";
+
 // Utils
-import { common } from "@/utils/common";
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
+import { staticTexts } from "@/utils/staticTexts";
 
-// React
-import { useContext, useRef } from "react";
-
-// Context
-import { ThemeContext } from "@/context/context";
-
-// Framer Motion
-import { motion, useInView } from "framer-motion";
+// React icons
+import { FaAngleDoubleDown } from "react-icons/fa";
 
 // Component
 export default function About() {
-  // Ref
-  const ref = useRef(null);
+  // Translations
+  const t = useTranslations();
 
-  // Context
-  const { lenguage } = useContext(ThemeContext);
-
-  // Set section variant
-  const section = {
-    hidden: { opacity: 0, y: 64 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { delay: 0.2, duration: 0.2 },
-    },
-  };
-
-  // Hook to check if the section is in view
-  const isInView = useInView(ref, { once: true });
-
+  // Return
   return (
     <>
-      <motion.section
-        ref={ref}
+      <section
         id="about"
-        initial="hidden"
-        className="about"
-        variants={section}
-        animate={isInView ? "visible" : "hidden"}
+        className="flex min-h-svh flex-col justify-center gap-2 sm:gap-4"
       >
-        <h2 className="about__title">
-          {lenguage ? english.about.title : spanish.about.title}
-        </h2>
+        <motion.h1
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 0.8 },
+            y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark"
+        >
+          {staticTexts.name}
+        </motion.h1>
 
-        <div className="about__container">
-          <div className="about__content">
-            <p className="about__text">
-              {lenguage ? english.about.text1 : spanish.about.text1}
-            </p>
+        <motion.h2
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 0.9 },
+            y: { delay: 0.9, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark"
+        >
+          {staticTexts.role}
+        </motion.h2>
 
-            <p className="about__text">
-              {lenguage ? english.about.text2 : spanish.about.text2}
-            </p>
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.0 },
+            y: { delay: 1.0, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+        >
+          {t.raw("about").description1}
+        </motion.p>
 
-            <p className="about__text">
-              {lenguage ? english.about.text3 : spanish.about.text3}
-            </p>
+        <motion.p
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.1 },
+            y: { delay: 1.1, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+        >
+          {t.raw("about").description2}
+        </motion.p>
 
-            <ul className="about__list">
-              {common.technologies.map((technology) => (
-                <li key={technology.text} className="about__item">
-                  <span className="about__separator">-</span>
-
-                  {technology.text}
-                </li>
-              ))}
-            </ul>
-
-            <div className="about__links">
-              <Button
-                external
-                link={common.linkedin}
-                text={common.linkedinText}
-                icon={<Linkedin width={20} height={20} className="icon" />}
+        <motion.section
+          className="mt-2 self-start"
+          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -12 }}
+          transition={{
+            opacity: { delay: 1.2 },
+            y: { delay: 1.2, duration: 0.0, ease: "easeInOut", type: "spring" },
+          }}
+        >
+          <Button
+            link={t.raw("links")[1].link}
+            text={t.raw("about").buttonLabel}
+            icon={
+              <FaAngleDoubleDown
+                aria-hidden="true"
+                className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light"
               />
-
-              <Button
-                external
-                link={common.github}
-                text={common.githubText}
-                icon={<Github width={20} height={20} className="icon" />}
-              />
-
-              <Button
-                external
-                link={common.email}
-                text={common.emailText}
-                icon={<Email width={20} height={20} className="icon" />}
-              />
-
-              <Button
-                external
-                text={lenguage ? english.about.resume : spanish.about.resume}
-                link={
-                  lenguage ? english.about.resumeLink : spanish.about.resumeLink
-                }
-              />
-            </div>
-          </div>
-
-          <div className="about__profile">
-            <Avatar />
-          </div>
-        </div>
-      </motion.section>
+            }
+          />
+        </motion.section>
+      </section>
     </>
   );
 }

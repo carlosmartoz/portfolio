@@ -1,38 +1,60 @@
-// Client Component
+// Client component
 "use client";
 
-// React
-import { useContext } from "react";
+// Framer Motion
+import { motion } from "framer-motion";
 
 // Components
+import Nav from "@/components/Nav";
+import Logo from "@/components/Logo";
 import Menu from "@/components/Menu";
-import Mobile from "@/components/Mobile";
+import Aside from "@/components/Aside";
+import Options from "@/components/Options";
 
-// Context
-import { ThemeContext } from "@/context/context";
+// Hooks
+import { useHeaderVisible } from "@/hooks/useHeaderVisible";
 
 // Component
 export default function Header() {
-  // Context
-  const { isHeaderVisible, prevScrollPos } = useContext(ThemeContext);
+  // Header visible
+  const [isHeaderVisible, prevScrollPos] = useHeaderVisible();
 
+  // Return
   return (
     <>
       <header
-        className="header"
-        style={{
-          boxShadow:
-            prevScrollPos > 32 && isHeaderVisible
-              ? "var(--shadow-normal)"
-              : "none",
-          transform: isHeaderVisible ? "translateY(0)" : "translateY(-100%)",
-        }}
+        className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-dark px-6 py-6 transition-all duration-[400ms] ease-in-out dark:bg-light ${prevScrollPos > 32 && isHeaderVisible ? "shadow-normal" : "shadow-none"} ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <nav className="nav">
-          <Menu />
+        <motion.section
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <Logo />
+        </motion.section>
 
-          <Mobile />
-        </nav>
+        <motion.section
+          transition={{
+            opacity: {
+              delay: 0.4,
+              duration: 0.4,
+              ease: "easeInOut",
+            },
+          }}
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          className="flex items-center gap-4"
+        >
+          <nav className="hidden lg:block">
+            <Nav />
+          </nav>
+
+          <Options />
+
+          <Menu />
+        </motion.section>
+
+        <Aside />
       </header>
     </>
   );

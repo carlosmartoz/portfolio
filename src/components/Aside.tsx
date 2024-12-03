@@ -1,110 +1,77 @@
-// Client Component
+// Client component
 "use client";
 
-// React
-import { useContext } from "react";
-
-// Framer Motion
-import { motion } from "framer-motion";
-
-// Components
-import Social from "@/components/Social";
-import Button from "@/components/Button";
+// Next
+import Link from "next/link";
 
 // Utils
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
+import { social } from "@/utils/social";
 
-// Context
-import { ThemeContext } from "@/context/context";
+// Components
+import Button from "@/components/Button";
+
+// Types
+import { type Links } from "@/types/links";
+
+// Next intl
+import { useTranslations } from "next-intl";
+
+// Stores
+import { useOpenMenu } from "@/stores/useOpenMenu";
 
 // Component
-export default function Aside({
-  openMenu,
-  setOpenMenu,
-}: {
-  openMenu: boolean;
-  setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
-  // Set menu item variant
-  const aside__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 0 },
-  };
+export default function Aside() {
+  // Translations
+  const t = useTranslations();
 
-  // Context
-  const { lenguage } = useContext(ThemeContext);
+  // Use open menu
+  const { openMenu } = useOpenMenu();
 
-  // Set menu variant
-  const aside = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.1 } },
-  };
-
+  // Return
   return (
     <>
-      <motion.aside
-        variants={aside}
-        initial="hidden"
-        className="aside"
-        animate={openMenu ? "visible" : "hidden"}
-        style={{
-          right: openMenu ? "0" : "-100%",
-          visibility: openMenu ? "visible" : "hidden",
-        }}
+      <aside
+        className={`fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 bg-dark px-8 shadow-normal transition-all duration-[400ms] ease-in-out xs:w-[calc(100%-128px)] lg:hidden dark:bg-light ${openMenu ? "right-0" : "-right-full"}`}
       >
-        <nav className="aside__nav">
-          <ul className="aside__menu">
-            {lenguage
-              ? english.header.menu.map((item, index) => (
-                  <motion.li
-                    key={index}
-                    variants={aside__item}
-                    className="aside__item"
-                  >
-                    <span className="aside__separator">-</span>
+        <ul className="flex flex-col items-center gap-6">
+          {t.raw("links").map((item: Links) => (
+            <li key={item.label} className="flex items-center gap-4">
+              <span className="h-px w-2 bg-red" aria-hidden="true" />
 
-                    <a
-                      href={`/${item.link}`}
-                      className="aside__link"
-                      onClick={() => setOpenMenu(false)}
-                    >
-                      {item.text}
-                    </a>
-                  </motion.li>
-                ))
-              : spanish.header.menu.map((item, index) => (
-                  <motion.li
-                    key={index}
-                    variants={aside__item}
-                    className="aside__item"
-                  >
-                    <span className="aside__separator">-</span>
+              <Link
+                href={item.link}
+                className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-lg md:text-xl dark:text-dark dark:hover:text-dark-red"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
 
-                    <a
-                      href={`/${item.link}`}
-                      className="aside__link"
-                      onClick={() => setOpenMenu(false)}
-                    >
-                      {item.text}
-                    </a>
-                  </motion.li>
-                ))}
+          <li className="ml-3">
+            <Button
+              external
+              link={t.raw("header").buttonLink}
+              text={t.raw("header").buttonLabel}
+            />
+          </li>
+        </ul>
 
-            <motion.li variants={aside__item}>
-              <Button
-                external
-                link={lenguage ? english.header.link : spanish.header.link}
-                text={lenguage ? english.header.button : spanish.header.button}
-              />
-            </motion.li>
-
-            <motion.li variants={aside__item}>
-              <Social />
-            </motion.li>
-          </ul>
-        </nav>
-      </motion.aside>
+        <ul className="flex items-center gap-4">
+          {social.map((item) => (
+            <li key={item.label}>
+              <Link
+                target="_blank"
+                href={item.link}
+                aria-label={item.label}
+                rel="noopener noreferrer"
+                className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:text-dark"
+              >
+                {item.icon}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </aside>
     </>
   );
 }

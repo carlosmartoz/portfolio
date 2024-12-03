@@ -1,79 +1,79 @@
-// Client Component
+// Client component
 "use client";
 
 // Components
-import Cards from "@/components/Cards";
-
-// Utils
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
-
-// React
-import { useContext, useRef } from "react";
-
-// Context
-import { ThemeContext } from "@/context/context";
+import Card from "@/components/Card";
 
 // Framer Motion
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+
+// Next intl
+import { useTranslations } from "next-intl";
+
+// Types
+import { type Project } from "@/types/project";
 
 // Component
 export default function Projects() {
-  // Ref
-  const ref = useRef(null);
+  // Translations
+  const t = useTranslations();
 
-  // Set section item variant
-  const section__item = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 32 },
-  };
-
-  // Hook to check if the section is in view
-  const isInView = useInView(ref, { once: true });
-
-  // Context
-  const { lenguage, isReady } = useContext(ThemeContext);
-
-  // Set section variant
-  const section = {
-    hidden: { opacity: 0, y: 64 },
+  // Variants
+  const containerVariants = {
+    hidden: {},
     visible: {
-      y: 0,
-      opacity: 1,
-      transition: { delay: 0.2, duration: 0.2, staggerChildren: 0.2 },
+      transition: {
+        staggerChildren: 0.1,
+      },
     },
   };
 
-  // Projects
-  const projects = lenguage ? english.projects.cards : spanish.projects.cards;
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        delay: index * 0.1,
+      },
+    }),
+  };
 
+  // Return
   return (
     <>
       <motion.section
-        ref={ref}
         id="projects"
         initial="hidden"
-        variants={section}
-        className="projects"
-        animate={isInView ? "visible" : "hidden"}
+        animate="visible"
+        variants={containerVariants}
+        className="flex min-h-svh flex-col gap-4 md:gap-8"
       >
-        <h2 className="projects__title">
-          {lenguage ? english.projects.title : spanish.projects.title}
-        </h2>
+        <motion.h3
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          variants={itemVariants}
+          viewport={{ once: true, amount: 0.1 }}
+          className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark"
+        >
+          {t.raw("links")[1].label}
+        </motion.h3>
 
-        <ul className="projects__cards">
-          {isReady &&
-            projects.map((card) => (
-              <motion.li key={card.title} variants={section__item}>
-                <Cards
-                  title={card.title}
-                  github={card.github}
-                  website={card.website}
-                  description={card.text}
-                  technologies={card.technologies}
-                />
-              </motion.li>
-            ))}
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {t.raw("projects").map((project: Project, index: number) => (
+            <motion.li
+              custom={index + 1}
+              initial="hidden"
+              key={project.title}
+              whileInView="visible"
+              variants={itemVariants}
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              <Card {...project} />
+            </motion.li>
+          ))}
         </ul>
       </motion.section>
     </>

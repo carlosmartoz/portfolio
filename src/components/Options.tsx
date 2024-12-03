@@ -1,74 +1,84 @@
 // Client Component
 "use client";
 
-// Icons
-import Dark from "@/icons/Dark";
-import Light from "@/icons/Light";
-
-// React
-import { useContext } from "react";
+// Next
+import Link from "next/link";
 
 // Utils
-import { spanish } from "@/utils/spanish";
-import { english } from "@/utils/english";
+import { social } from "@/utils/social";
 
-// Context
-import { ThemeContext } from "@/context/context";
+// Next intl
+import { useTranslations } from "next-intl";
+
+// React icons
+import { VscColorMode } from "react-icons/vsc";
+
+// Services
+import { setUserLocale } from "@/services/locale";
+
+// Hooks
+import { useColorMode } from "@/hooks/useColorMode";
 
 // Component
 export default function Options() {
-  // Context
-  const { colorMode, setColorMode, lenguage, setLenguage } =
-    useContext(ThemeContext);
+  // Translations
+  const t = useTranslations();
 
+  // Color mode
+  const [colorMode, setColorMode] = useColorMode();
+
+  // Return
   return (
     <>
-      <ul className="options">
-        <li>
-          <button
-            type="button"
-            className="options__lenguage"
-            aria-label={
-              lenguage
-                ? english.header.ariaLabelLenguage
-                : spanish.header.ariaLabelLenguage
-            }
-            onClick={() => setLenguage(!lenguage)}
-          >
-            {lenguage ? english.header.lenguage : spanish.header.lenguage}
-          </button>
-        </li>
+      <section className="flex items-center gap-4">
+        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
 
-        <li>
-          {colorMode ? (
+        <ul className="hidden items-center gap-2 lg:flex">
+          {social.map((item) => (
+            <li key={item.label}>
+              <Link
+                target="_blank"
+                href={item.link}
+                aria-label={item.label}
+                rel="noopener noreferrer"
+                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
+              >
+                {item.icon}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
+
+        <ul className="relative z-50 flex items-center gap-2">
+          <li className="relative">
             <button
               type="button"
-              className="options__color"
               aria-label={
-                lenguage
-                  ? english.header.ariaLabelLight
-                  : spanish.header.ariaLabelLight
+                t.raw("header").lenguage === "es" ? "spanish" : "english"
               }
-              onClick={() => setColorMode(!colorMode)}
+              onClick={() =>
+                setUserLocale(t.raw("header").lenguage === "es" ? "es" : "en")
+              }
+              className="text-lg text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red"
             >
-              <Dark width={32} height={32} />
+              {t.raw("header").lenguageLabel}
             </button>
-          ) : (
+          </li>
+
+          <li>
             <button
               type="button"
-              className="options__color"
-              aria-label={
-                lenguage
-                  ? english.header.ariaLabelDark
-                  : spanish.header.ariaLabelDark
-              }
+              aria-label="color mode"
+              className="flex items-center"
               onClick={() => setColorMode(!colorMode)}
             >
-              <Light width={32} height={32} />
+              <VscColorMode className="rotate-180 text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:rotate-0 dark:text-dark" />
             </button>
-          )}
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </section>
     </>
   );
 }

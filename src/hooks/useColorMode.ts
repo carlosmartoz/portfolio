@@ -4,29 +4,38 @@ import { useState, useEffect } from "react";
 // Hook
 export const useColorMode = (): [
   boolean,
-  React.Dispatch<React.SetStateAction<boolean>>
+  React.Dispatch<React.SetStateAction<boolean>>,
 ] => {
-  // Set color mode
+  // Color mode
   const [colorMode, setColorMode] = useState<boolean>(false);
 
-  // Effect to get the color mode from the local storage
+  // Effect
   useEffect(() => {
+    // If window is different than undefined
     if (typeof window !== "undefined") {
-      const savedColorMode = localStorage.getItem("colorMode");
+      // Get item from the local storage
+      const savedColorMode = localStorage.getItem("theme");
+
+      // If savedColorMode is different than null
       if (savedColorMode !== null) {
+        // Color mode
         setColorMode(JSON.parse(savedColorMode));
       }
     }
   }, []);
 
-  // Effect to add or remove the class to the html
+  // Effect
   useEffect(() => {
+    // If window is different than undefined
     if (typeof window !== "undefined") {
-      document.documentElement.classList.toggle("colorMode", colorMode);
+      // Toggle dark class in HTML element
+      document.documentElement.classList.toggle("dark", colorMode);
 
-      localStorage.setItem("colorMode", JSON.stringify(colorMode));
+      // Set item in the local storage
+      localStorage.setItem("theme", JSON.stringify(colorMode));
     }
   }, [colorMode]);
 
+  // Return
   return [colorMode, setColorMode];
 };
