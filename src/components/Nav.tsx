@@ -22,7 +22,7 @@ export default function Nav() {
   return (
     <>
       <ul className="flex items-center gap-4">
-        {t.raw("links").map((item: Links, index: any) => (
+        {t.raw("links").map((item: Links, index: number) => (
           <li key={index} className="flex items-center gap-4">
             <Link
               href={item.link}

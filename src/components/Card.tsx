@@ -76,7 +76,7 @@ export default function Card({
 
             <footer>
               <ul className="flex flex-wrap gap-3">
-                {technologies.map((technology: any) => (
+                {technologies.map((technology: string) => (
                   <li
                     key={technology}
                     className="font-fira text-xs font-normal text-light xs:text-sm dark:text-dark"
