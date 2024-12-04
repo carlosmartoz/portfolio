@@ -12,8 +12,7 @@
   "header": {
     "lenguage": "en",
     "lenguageLabel": "ENG",
-    "buttonLabel": "Curriculum",
-    "buttonLink": "/carlos-martinez-curriculum.pdf"
+    "buttonLabel": "Curriculum"
   },
   "about": {
     "buttonLabel": "Mis projectos",
