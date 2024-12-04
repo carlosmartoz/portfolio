@@ -38,12 +38,8 @@ export default function Nav() {
         <li>
           <Button
             external
+            link={t.raw("header").buttonLink}
             text={t.raw("header").buttonLabel}
-            link={
-              t.raw("header").lenguage === "es"
-                ? "/carlos-martinez-curriculum.pdf"
-                : "/carlos-martinez-resume.pdf"
-            }
           />
         </li>
       </ul>

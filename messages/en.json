@@ -12,7 +12,8 @@
   "header": {
     "lenguage": "es",
     "lenguageLabel": "ESP",
-    "buttonLabel": "Resume"
+    "buttonLabel": "Resume",
+    "buttonLink": "/carlos-martinez-resume.pdf/"
   },
   "about": {
     "buttonLabel": "My projects",
