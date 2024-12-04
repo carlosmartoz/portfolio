@@ -1,6 +1,9 @@
 // Client component
 "use client";
 
+// Next
+import dynamic from "next/dynamic";
+
 // Framer Motion
 import { motion } from "framer-motion";
 
@@ -8,8 +11,10 @@ import { motion } from "framer-motion";
 import Nav from "@/components/Nav";
 import Logo from "@/components/Logo";
 import Menu from "@/components/Menu";
-import Aside from "@/components/Aside";
 import Options from "@/components/Options";
+
+// Dynamic components
+const Aside = dynamic(() => import("@/components/Aside"));
 
 // Hooks
 import { useHeaderVisible } from "@/hooks/useHeaderVisible";
