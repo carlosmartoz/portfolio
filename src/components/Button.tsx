@@ -18,7 +18,7 @@ export default function Button({
     <>
       <Link
         href={link}
-        prefetch={true}
+        prefetch={false}
         aria-label="button"
         target={external ? "_blank" : "_self"}
         rel={external ? "noopener noreferrer" : "opener noreferrer"}
