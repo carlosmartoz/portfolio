@@ -9,15 +9,17 @@ const withNextIntl = createNextIntlPlugin();
 
 // Next config
 const nextConfig: NextConfig = {
-  async rewrites() {
+  async headers() {
     return [
       {
-        source: "/carlos-martinez-resume.pdf",
-        destination: "/carlos-martinez-resume.pdf",
-      },
-      {
-        source: "/carlos-martinez-curriculum.pdf",
-        destination: "/carlos-martinez-curriculum.pdf",
+        source: "/:path*", // Match all pages
+        headers: [
+          {
+            key: "Cache-Control",
+            value:
+              "public, max-age=3600, s-maxage=3600, stale-while-revalidate=59",
+          },
+        ],
       },
     ];
   },
