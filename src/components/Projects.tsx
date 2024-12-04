@@ -29,10 +29,10 @@ export default function Projects() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 56 },
     visible: (index: number) => ({
-      opacity: 1,
       y: 0,
+      opacity: 1,
       transition: {
         duration: 0.4,
         delay: index * 0.1,

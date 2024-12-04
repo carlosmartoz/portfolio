@@ -1,9 +1,9 @@
 // Interface
-interface Item {
+interface SocialIconItem {
   link: string;
   label: string;
   icon: React.ReactNode;
 }
 
 // Type
-export type Social = Item[];
+export type SocialIcons = SocialIconItem[];

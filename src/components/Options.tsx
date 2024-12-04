@@ -4,14 +4,14 @@
 // Next
 import Link from "next/link";
 
-// Utils
-import { social } from "@/utils/social";
-
 // Next intl
 import { useTranslations } from "next-intl";
 
 // React icons
 import { VscColorMode } from "react-icons/vsc";
+
+// Utils
+import { socialIcons } from "@/utils/socialIcons";
 
 // Services
 import { setUserLocale } from "@/services/locale";
@@ -34,14 +34,14 @@ export default function Options() {
         <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
 
         <ul className="hidden items-center gap-2 lg:flex">
-          {social.map((item) => (
+          {socialIcons.map((item) => (
             <li key={item.label}>
               <Link
                 target="_blank"
                 href={item.link}
                 aria-label={item.label}
                 rel="noopener noreferrer"
-                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark"
+                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark dark:hover:text-dark-red"
               >
                 {item.icon}
               </Link>
@@ -74,7 +74,7 @@ export default function Options() {
               className="flex items-center"
               onClick={() => setColorMode(!colorMode)}
             >
-              <VscColorMode className="rotate-180 text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:rotate-0 dark:text-dark" />
+              <VscColorMode className="rotate-180 text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:rotate-0 dark:text-dark dark:hover:text-dark-red" />
             </button>
           </li>
         </ul>

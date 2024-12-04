@@ -4,9 +4,6 @@
 // Next
 import Link from "next/link";
 
-// Utils
-import { social } from "@/utils/social";
-
 // Components
 import Button from "@/components/Button";
 
@@ -15,6 +12,9 @@ import { type Links } from "@/types/links";
 
 // Next intl
 import { useTranslations } from "next-intl";
+
+// Utils
+import { socialIcons } from "@/utils/socialIcons";
 
 // Stores
 import { useOpenMenu } from "@/stores/useOpenMenu";
@@ -57,7 +57,7 @@ export default function Aside() {
         </ul>
 
         <ul className="flex items-center gap-4">
-          {social.map((item) => (
+          {socialIcons.map((item) => (
             <li key={item.label}>
               <Link
                 target="_blank"

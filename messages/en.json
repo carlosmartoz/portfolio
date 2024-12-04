@@ -7,6 +7,10 @@
     {
       "link": "#projects",
       "label": "Projects"
+    },
+    {
+      "link": "#contact",
+      "label": "Contact"
     }
   ],
   "header": {
@@ -92,6 +96,9 @@
       "description": "Built a task manager where tasks can be created, edited, deleted, and marked as completed, enabling efficient management."
     }
   ],
+  "contact": {
+    "description": "I'm open to new opportunities and collaborations. If you have any questions or just want to say hi, feel free to get in touch with me."
+  },
   "footer": {
     "text": "Created by Carlos Martínez."
   }

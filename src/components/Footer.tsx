@@ -18,13 +18,27 @@ export default function Footer() {
   // Translations
   const t = useTranslations();
 
+  // Variants
+  const footerVariants = {
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
+    hidden: { opacity: 0, y: 56 },
+  };
+
   // Return
   return (
     <>
       <motion.footer
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ delay: 1.2, duration: 0.4, ease: "easeInOut" }}
+        initial="hidden"
+        whileInView="visible"
+        variants={footerVariants}
+        viewport={{ once: true, amount: 0.8 }}
         className="flex w-full items-center justify-center py-12 lg:py-6"
       >
         <Link
@@ -34,8 +48,8 @@ export default function Footer() {
           className="flex gap-2 font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-base dark:text-dark dark:hover:text-dark-red"
         >
           <IoIosGitBranch
-            className="text-xl text-red xs:text-2xl"
             aria-hidden="true"
+            className="text-xl text-red xs:text-2xl dark:text-dark-red"
           />
           {t.raw("footer").text}
         </Link>

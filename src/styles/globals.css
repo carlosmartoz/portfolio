@@ -5,7 +5,8 @@
 
 /* Custom CSS */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 2px;
+  height: 2px;
 }
 ::-webkit-scrollbar-thumb {
   background: #ff0000;

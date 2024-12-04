@@ -13,9 +13,6 @@ import { useTranslations } from "next-intl";
 // Utils
 import { staticTexts } from "@/utils/staticTexts";
 
-// React icons
-import { FaAngleDoubleDown } from "react-icons/fa";
-
 // Component
 export default function About() {
   // Translations
@@ -88,12 +85,6 @@ export default function About() {
           <Button
             link={t.raw("links")[1].link}
             text={t.raw("about").buttonLabel}
-            icon={
-              <FaAngleDoubleDown
-                aria-hidden="true"
-                className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light"
-              />
-            }
           />
         </motion.section>
       </section>

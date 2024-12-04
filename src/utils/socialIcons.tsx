@@ -1,11 +1,11 @@
 // Types
-import { type Social } from "@/types/social";
+import { type SocialIcons } from "@/types/socialIcons";
 
 // React icons
 import { FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
 // Utils
-export const social: Social = [
+export const socialIcons: SocialIcons = [
   {
     label: "github",
     icon: <FaGithub aria-hidden="true" />,

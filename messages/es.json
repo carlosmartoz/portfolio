@@ -7,6 +7,10 @@
     {
       "link": "#projects",
       "label": "Projectos"
+    },
+    {
+      "link": "#contact",
+      "label": "Contacto"
     }
   ],
   "header": {
@@ -92,6 +96,9 @@
       "description": "Desarrollé un gestor de tareas donde se pueden crear, editar, eliminar y marcar como completadas, permitiendo una gestión eficiente."
     }
   ],
+  "contact": {
+    "description": "Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes alguna pregunta o simplemente quieres saludar, no dudes en ponerte en contacto conmigo."
+  },
   "footer": {
     "text": "Creado por Carlos Martínez."
   }
