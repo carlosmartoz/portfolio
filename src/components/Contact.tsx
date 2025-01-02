@@ -18,14 +18,13 @@ export default function Contact() {
   // Variants
   const sectionVariants = {
     visible: {
-      y: 0,
       opacity: 1,
       transition: {
         duration: 0.4,
         ease: "easeInOut",
       },
     },
-    hidden: { opacity: 0, y: -56 },
+    hidden: { opacity: 0 },
   };
 
   // Return
