@@ -61,7 +61,7 @@ export default function Options() {
               onClick={() =>
                 setUserLocale(t.raw("header").lenguage === "es" ? "es" : "en")
               }
-              className="text-light hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red text-lg transition-all duration-[400ms] ease-in-out"
+              className="text-light hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red cursor-pointer text-lg transition-all duration-[400ms] ease-in-out"
             >
               {t.raw("header").lenguageLabel}
             </button>
@@ -71,7 +71,7 @@ export default function Options() {
             <button
               type="button"
               aria-label="color mode"
-              className="flex items-center"
+              className="flex cursor-pointer items-center"
               onClick={() => setColorMode(!colorMode)}
             >
               <VscColorMode className="text-light hover:text-red xs:text-2xl dark:text-dark dark:hover:text-dark-red rotate-180 text-xl transition-all duration-[400ms] ease-in-out dark:rotate-0" />
