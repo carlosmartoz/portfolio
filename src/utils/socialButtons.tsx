@@ -17,7 +17,7 @@ export const socialButtons: SocialButtons = [
         icon={
           <FaGithub
             aria-hidden="true"
-            className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light dark:text-dark-red"
+            className="text-red group-hover:text-light dark:text-dark-red transition-all duration-[150ms] ease-in-out"
           />
         }
       />
@@ -31,7 +31,7 @@ export const socialButtons: SocialButtons = [
         icon={
           <FaLinkedin
             aria-hidden="true"
-            className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light dark:text-dark-red"
+            className="text-red group-hover:text-light dark:text-dark-red transition-all duration-[150ms] ease-in-out"
           />
         }
       />
@@ -45,7 +45,7 @@ export const socialButtons: SocialButtons = [
         icon={
           <FaRegEnvelope
             aria-hidden="true"
-            className="text-red transition-all duration-[150ms] ease-in-out group-hover:text-light dark:text-dark-red"
+            className="text-red group-hover:text-light dark:text-dark-red transition-all duration-[150ms] ease-in-out"
           />
         }
       />

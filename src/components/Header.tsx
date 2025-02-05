@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-50 flex w-full items-center justify-between bg-dark px-6 py-6 transition-all duration-[400ms] ease-in-out dark:bg-light ${prevScrollPos > 32 && isHeaderVisible ? "shadow-normal" : "shadow-none"} ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`bg-dark dark:bg-light fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-6 transition-all duration-[400ms] ease-in-out ${prevScrollPos > 32 && isHeaderVisible ? "shadow-normal" : "shadow-none"} ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         <motion.section
           animate={{ opacity: 1 }}

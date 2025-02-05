@@ -17,7 +17,7 @@ export default function Main({
   return (
     <>
       <main
-        className={`${openMenu ? "pointer-events-none min-h-svh touch-none select-none blur-sm lg:pointer-events-auto lg:touch-auto lg:select-auto lg:blur-0" : "min-h-svh"}`}
+        className={`${openMenu ? "lg:blur-0 pointer-events-none min-h-svh touch-none blur-xs select-none lg:pointer-events-auto lg:touch-auto lg:select-auto" : "min-h-svh"}`}
       >
         <article className="relative mx-auto flex min-h-svh w-full flex-col gap-12 px-6 lg:max-w-5xl xl:px-0">
           {children}

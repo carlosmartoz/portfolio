@@ -31,7 +31,7 @@ export default function Options() {
   return (
     <>
       <section className="flex items-center gap-4">
-        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
+        <span aria-hidden="true" className="bg-red hidden h-px w-2 lg:block" />
 
         <ul className="hidden items-center gap-2 lg:flex">
           {socialIcons.map((item) => (
@@ -41,7 +41,7 @@ export default function Options() {
                 href={item.link}
                 aria-label={item.label}
                 rel="noopener noreferrer"
-                className="text-2xl text-light transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark dark:hover:text-dark-red"
+                className="text-light hover:text-red dark:text-dark dark:hover:text-dark-red text-2xl transition-all duration-[400ms] ease-in-out"
               >
                 {item.icon}
               </Link>
@@ -49,7 +49,7 @@ export default function Options() {
           ))}
         </ul>
 
-        <span aria-hidden="true" className="hidden h-px w-2 bg-red lg:block" />
+        <span aria-hidden="true" className="bg-red hidden h-px w-2 lg:block" />
 
         <ul className="relative z-50 flex items-center gap-2">
           <li className="relative">
@@ -61,7 +61,7 @@ export default function Options() {
               onClick={() =>
                 setUserLocale(t.raw("header").lenguage === "es" ? "es" : "en")
               }
-              className="text-lg text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red"
+              className="text-light hover:text-red xs:text-xl dark:text-dark dark:hover:text-dark-red text-lg transition-all duration-[400ms] ease-in-out"
             >
               {t.raw("header").lenguageLabel}
             </button>
@@ -74,7 +74,7 @@ export default function Options() {
               className="flex items-center"
               onClick={() => setColorMode(!colorMode)}
             >
-              <VscColorMode className="rotate-180 text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:rotate-0 dark:text-dark dark:hover:text-dark-red" />
+              <VscColorMode className="text-light hover:text-red xs:text-2xl dark:text-dark dark:hover:text-dark-red rotate-180 text-xl transition-all duration-[400ms] ease-in-out dark:rotate-0" />
             </button>
           </li>
         </ul>

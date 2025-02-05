@@ -23,15 +23,15 @@ export default function Card({
   return (
     <>
       <section className="group relative block transition-all duration-[150ms] ease-in-out">
-        <div className="relative block overflow-hidden p-4 shadow-inset md:h-[256px] lg:h-[300px] xl:h-auto">
+        <div className="shadow-inset relative block overflow-hidden p-4 md:h-[256px] lg:h-[300px] xl:h-auto">
           <span
             aria-hidden="true"
-            className="absolute -left-12 bottom-[-1px] top-0 block w-0 skew-x-[-15deg] bg-dark-red transition-all duration-200 ease-in-out group-hover:w-[calc(100%+105px)]"
+            className="bg-dark-red absolute top-0 bottom-[-1px] -left-12 block w-0 skew-x-[-15deg] transition-all duration-200 ease-in-out group-hover:w-[calc(100%+105px)]"
           />
 
           <section className="relative flex h-full flex-col justify-between gap-6 transition-all duration-[400ms] ease-in-out">
             <header className="flex items-center justify-between">
-              <h4 className="font-fira text-base font-semibold text-light transition-all duration-[400ms] ease-in-out group-hover:text-light xs:text-lg dark:text-dark">
+              <h4 className="font-fira text-light group-hover:text-light xs:text-lg dark:text-dark text-base font-semibold transition-all duration-[400ms] ease-in-out">
                 {title}
               </h4>
 
@@ -46,7 +46,7 @@ export default function Card({
                     >
                       <FaGithub
                         aria-hidden="true"
-                        className="text-xl text-light transition-all duration-[400ms] ease-in-out group-hover:text-light xs:text-2xl dark:text-dark"
+                        className="text-light group-hover:text-light xs:text-2xl dark:text-dark text-xl transition-all duration-[400ms] ease-in-out"
                       />
                     </Link>
                   </li>
@@ -61,7 +61,7 @@ export default function Card({
                   >
                     <FiExternalLink
                       aria-hidden="true"
-                      className="text-xl text-light transition-all duration-[400ms] ease-in-out group-hover:text-light xs:text-2xl dark:text-dark"
+                      className="text-light group-hover:text-light xs:text-2xl dark:text-dark text-xl transition-all duration-[400ms] ease-in-out"
                     />
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ export default function Card({
             </header>
 
             <section>
-              <p className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out group-hover:text-light xs:text-base dark:text-dark">
+              <p className="font-fira text-gray group-hover:text-light xs:text-base dark:text-dark text-sm font-normal transition-all duration-[400ms] ease-in-out">
                 {description}
               </p>
             </section>
@@ -79,7 +79,7 @@ export default function Card({
                 {technologies.map((technology: string) => (
                   <li
                     key={technology}
-                    className="font-fira text-xs font-normal text-light transition-all duration-[400ms] ease-in-out group-hover:text-light xs:text-sm dark:text-dark"
+                    className="font-fira text-light group-hover:text-light xs:text-sm dark:text-dark text-xs font-normal transition-all duration-[400ms] ease-in-out"
                   >
                     {technology}
                   </li>

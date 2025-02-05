@@ -1,7 +1,36 @@
 /* Tailwind */
-@tailwind base;
-@tailwind utilities;
-@tailwind components;
+@import "tailwindcss";
+
+/* Custom variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme */
+@theme {
+  --breakpoint-xs: 375px;
+
+  --color-red: #ff0000;
+  --color-dark: #0b1622;
+  --color-gray: #a6aebf;
+  --color-light: #edf2f4;
+  --color-dark-red: #da0101;
+
+  --font-inter: var(--font-inter), sans-serif;
+  --font-fira: var(--font-fira-code), monospace;
+
+  --shadow-inset: inset 0px 0px 0px 1px #ff0000;
+  --shadow-normal: 0px 0px 64px rgba(0, 0, 0, 0.1);
+}
+
+/* Base */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 /* Custom CSS */
 ::-webkit-scrollbar {

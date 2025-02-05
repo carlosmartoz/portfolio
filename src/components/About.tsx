@@ -32,7 +32,7 @@ export default function About() {
             opacity: { delay: 0.8 },
             y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
-          className="font-inter text-3xl font-semibold leading-tight text-light transition-all duration-[400ms] ease-in-out xs:text-4xl md:text-5xl lg:text-7xl dark:text-dark"
+          className="font-inter text-light xs:text-4xl dark:text-dark text-3xl leading-tight font-semibold transition-all duration-[400ms] ease-in-out md:text-5xl lg:text-7xl lg:leading-none"
         >
           {staticTexts.name}
         </motion.h1>
@@ -44,7 +44,7 @@ export default function About() {
             opacity: { delay: 0.9 },
             y: { delay: 0.9, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
-          className="font-inter text-2xl font-semibold leading-tight text-gray transition-all duration-[400ms] ease-in-out xs:text-3xl md:text-5xl lg:text-7xl dark:text-dark"
+          className="font-inter text-gray xs:text-3xl dark:text-dark text-2xl leading-tight font-semibold transition-all duration-[400ms] ease-in-out md:text-5xl lg:text-7xl lg:leading-none"
         >
           {staticTexts.role}
         </motion.h2>
@@ -56,7 +56,7 @@ export default function About() {
             opacity: { delay: 1.0 },
             y: { delay: 1.0, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
-          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+          className="font-fira text-gray xs:text-base dark:text-dark text-sm font-normal transition-all duration-[400ms] ease-in-out md:w-[90%] lg:w-[80%]"
         >
           {t.raw("about").description1}
         </motion.p>
@@ -68,7 +68,7 @@ export default function About() {
             opacity: { delay: 1.1 },
             y: { delay: 1.1, duration: 0.0, ease: "easeInOut", type: "spring" },
           }}
-          className="font-fira text-sm font-normal text-gray transition-all duration-[400ms] ease-in-out xs:text-base md:w-[90%] lg:w-[80%] dark:text-dark"
+          className="font-fira text-gray xs:text-base dark:text-dark text-sm font-normal transition-all duration-[400ms] ease-in-out md:w-[90%] lg:w-[80%]"
         >
           {t.raw("about").description2}
         </motion.p>

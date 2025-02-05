@@ -14,15 +14,15 @@ export default function Logo() {
       >
         <span
           aria-hidden="true"
-          className="relative block h-10 w-10 rotate-45 text-xl font-bold text-red transition-all duration-[150ms] ease-in-out group-hover:text-light xs:h-11 xs:w-11"
+          className="text-red group-hover:text-light xs:h-11 xs:w-11 relative block h-10 w-10 rotate-45 text-xl font-bold transition-all duration-[150ms] ease-in-out"
         >
           <span
             aria-hidden="true"
-            className="relative flex h-full items-center justify-center overflow-hidden shadow-inset"
+            className="shadow-inset relative flex h-full items-center justify-center overflow-hidden"
           >
             <span
               aria-hidden="true"
-              className="absolute -left-6 bottom-[-1px] top-0 block w-0 skew-x-[30deg] bg-dark-red transition-all duration-[300ms] ease-in-out group-hover:w-[200%]"
+              className="bg-dark-red absolute top-0 bottom-[-1px] -left-6 block w-0 skew-x-[30deg] transition-all duration-[300ms] ease-in-out group-hover:w-[200%]"
             />
 
             <span className="relative -rotate-45" aria-hidden="true">

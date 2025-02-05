@@ -31,16 +31,16 @@ export default function Aside() {
   return (
     <>
       <aside
-        className={`fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 bg-dark px-8 shadow-normal transition-all duration-[400ms] ease-in-out xs:w-[calc(100%-128px)] lg:hidden dark:bg-light ${openMenu ? "right-0" : "-right-full"}`}
+        className={`bg-dark shadow-normal xs:w-[calc(100%-128px)] dark:bg-light fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 px-8 transition-all duration-[400ms] ease-in-out lg:hidden ${openMenu ? "right-0" : "-right-full"}`}
       >
         <ul className="flex flex-col items-center gap-6">
           {t.raw("links").map((item: Links) => (
             <li key={item.label} className="flex items-center gap-4">
-              <span className="h-px w-2 bg-red" aria-hidden="true" />
+              <span className="bg-red h-px w-2" aria-hidden="true" />
 
               <Link
                 href={item.link}
-                className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red xs:text-lg md:text-xl dark:text-dark dark:hover:text-dark-red"
+                className="font-fira text-gray hover:text-red xs:text-lg dark:text-dark dark:hover:text-dark-red text-base font-normal transition-all duration-[400ms] ease-in-out md:text-xl"
               >
                 {item.label}
               </Link>
@@ -64,7 +64,7 @@ export default function Aside() {
                 href={item.link}
                 aria-label={item.label}
                 rel="noopener noreferrer"
-                className="text-xl text-light transition-all duration-[400ms] ease-in-out hover:text-red xs:text-2xl dark:text-dark"
+                className="text-light hover:text-red xs:text-2xl dark:text-dark text-xl transition-all duration-[400ms] ease-in-out"
               >
                 {item.icon}
               </Link>

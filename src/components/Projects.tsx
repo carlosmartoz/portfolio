@@ -56,7 +56,7 @@ export default function Projects() {
           whileInView="visible"
           variants={itemVariants}
           viewport={{ once: true, amount: 0.1 }}
-          className="font-inter text-xl font-semibold text-light xs:text-2xl md:text-3xl lg:text-4xl dark:text-dark"
+          className="font-inter text-light xs:text-2xl dark:text-dark text-xl font-semibold md:text-3xl lg:text-4xl"
         >
           {t.raw("links")[1].label}
         </motion.h3>

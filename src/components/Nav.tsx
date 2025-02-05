@@ -26,12 +26,12 @@ export default function Nav() {
           <li key={index} className="flex items-center gap-4">
             <Link
               href={item.link}
-              className="font-fira text-base font-normal text-gray transition-all duration-[400ms] ease-in-out hover:text-red dark:text-dark dark:hover:text-dark-red"
+              className="font-fira text-gray hover:text-red dark:text-dark dark:hover:text-dark-red text-base font-normal transition-all duration-[400ms] ease-in-out"
             >
               {item.label}
             </Link>
 
-            <span className="h-px w-2 bg-red" aria-hidden="true" />
+            <span className="bg-red h-px w-2" aria-hidden="true" />
           </li>
         ))}
 
