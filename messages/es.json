@@ -47,52 +47,52 @@
       "description": "Desarrollé una landing page para la marca Love, destacando un estilo minimalista, limpio y funcional que refleja la identidad de la marca."
     },
     {
+      "github": "",
       "title": "Pokémon Shop",
       "website": "https://pokemon-shop-three.vercel.app/",
-      "github": "https://github.com/carlosmartoz/pokemon-shop",
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
       "description": "Creé una tienda con la API de Pokémon, implementé paginación, carrito, integré una API de cambio de moneda y guardé datos en el navegador."
     },
     {
+      "github": "",
       "title": "Knockout.js Test",
       "website": "https://knockoutjs-test.vercel.app/",
       "technologies": ["HTML & CSS3", "JavaScript", "JQuery"],
-      "github": "https://github.com/carlosmartoz/knockoutjs-test",
       "description": "Desarrollé un login ficticio, integré una API para mostrar productos y creé un formulario para agregar nuevos productos con Bootstrap y Knockout.js."
     },
     {
+      "github": "",
       "title": "Bill Calculator",
       "technologies": ["HTML5 & CSS3", "JavaScript"],
       "website": "https://bill-calculator-phi.vercel.app/",
-      "github": "https://github.com/carlosmartoz/bill-calculator",
       "description": "Creé una calculadora de facturas usando JavaScript, aplicando reglas específicas para cálculos precisos y garantizando su funcionalidad."
     },
     {
+      "github": "",
       "title": "Pokédex",
       "technologies": ["React.js", "JavaScript"],
       "website": "https://pokedex-vert-nine.vercel.app/",
-      "github": "https://github.com/carlosmartoz/pokedex",
       "description": "Desarrollé una Pokédex con la API de Pokémon, implementando paginación y ajustando estilos según el tipo de Pokémon, mostrando sus datos."
     },
     {
+      "github": "",
       "title": "Pokémon TCG",
       "website": "https://pokemon-tcg-sigma.vercel.app/",
-      "github": "https://github.com/carlosmartoz/pokemon-tcg",
       "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
       "description": "Creé una Pokédex de cartas TCG con la API de Pokémon TCG, implementando paginación y ajustando estilos según el tipo de carta."
     },
     {
+      "github": "",
       "title": "Hackers News",
       "technologies": ["React.js", "TypeScript"],
       "website": "https://hackers-news-ruby.vercel.app/",
-      "github": "https://github.com/carlosmartoz/hackers-news",
       "description": "Repliqué Hacker News, consumí su API para mostrar artículos y permití guardar favoritos en el navegador con almacenamiento local."
     },
     {
+      "github": "",
       "title": "Task Manager",
       "technologies": ["React.js", "JavaScript"],
       "website": "https://task-manager-two-fawn.vercel.app/",
-      "github": "https://github.com/carlosmartoz/task-manager",
       "description": "Desarrollé un gestor de tareas donde se pueden crear, editar, eliminar y marcar como completadas, permitiendo una gestión eficiente."
     }
   ],
