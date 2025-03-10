@@ -27,7 +27,7 @@ export default function About() {
       >
         <motion.h1
           animate={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -12 }}
+          initial={{ opacity: 0, y: -14 }}
           transition={{
             opacity: { delay: 0.8 },
             y: { delay: 0.8, duration: 0.0, ease: "easeInOut", type: "spring" },
