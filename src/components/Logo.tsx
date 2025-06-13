@@ -1,9 +1,6 @@
-// Next
 import Link from "next/link";
 
-// Component
 export default function Logo() {
-  // Return
   return (
     <>
       <Link

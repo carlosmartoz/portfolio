@@ -1,33 +1,19 @@
-// Styles
 import "@/styles/globals.css";
-
-// Next
 import type { Metadata } from "next";
 import { Fira_Code, Inter } from "next/font/google";
-
-// Next intl
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
-
-// Vercel
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-// Font
 const inter = Inter({
-  display: "swap",
-  subsets: ["latin"],
   variable: "--font-inter",
-});
-
-// Font
-const firaCode = Fira_Code({
-  display: "swap",
   subsets: ["latin"],
-  variable: "--font-fira-code",
 });
 
-// Metadata
+const firaCode = Fira_Code({
+  variable: "--font-fira-code",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   generator: "Next.js",
   category: "Portfolio",
@@ -122,28 +108,18 @@ export const metadata: Metadata = {
   },
 };
 
-// Layout
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Locale
-  const locale = await getLocale();
-
-  // Messages
-  const messages = await getMessages();
-
-  // Return
   return (
     <html
-      lang={locale}
-      className={`bg-dark dark:bg-light min-h-svh scroll-smooth transition-all duration-[400ms] ease-in-out ${inter.variable} ${firaCode.variable}`}
+      lang="es"
+      className="bg-dark dark:bg-light min-h-svh scroll-smooth transition-all duration-[400ms] ease-in-out"
     >
-      <body className="min-h-svh">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+      <body className={`min-h-svh ${inter.variable} ${firaCode.variable}`}>
+        {children}
 
         <Analytics />
 

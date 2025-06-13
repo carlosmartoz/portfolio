@@ -1,7 +1,5 @@
-// Next
 import Link from "next/link";
 
-// Component
 export default function Button({
   link,
   text,
@@ -13,7 +11,6 @@ export default function Button({
   external?: boolean;
   icon?: React.ReactNode;
 }) {
-  // Return
   return (
     <>
       <Link

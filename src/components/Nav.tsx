@@ -1,28 +1,15 @@
-// Client component
 "use client";
 
-// Next
 import Link from "next/link";
-
-// Components
+import { links } from "@/utils/links";
 import Button from "@/components/Button";
-
-// Types
 import { type Links } from "@/types/links";
 
-// Next intl
-import { useTranslations } from "next-intl";
-
-// Component
 export default function Nav() {
-  // Translations
-  const t = useTranslations();
-
-  // Return
   return (
     <>
       <ul className="flex items-center gap-4">
-        {t.raw("links").map((item: Links, index: number) => (
+        {links.map((item: Links, index: number) => (
           <li key={index} className="flex items-center gap-4">
             <Link
               href={item.link}
@@ -38,8 +25,8 @@ export default function Nav() {
         <li>
           <Button
             external
-            link={t.raw("header").buttonLink}
-            text={t.raw("header").buttonLabel}
+            text="Curriculum"
+            link="/carlos-martinez-curriculum.pdf/"
           />
         </li>
       </ul>

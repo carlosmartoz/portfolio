@@ -1,25 +1,16 @@
-// Client component
 "use client";
 
-// Stores
-import { useOpenMenu } from "@/stores/useOpenMenu";
-
-// Hooks
+import { useOpenMenu } from "@/hooks/useOpenMenu";
 import { useCloseMenuOnResize } from "@/hooks/useCloseMenuOnResize";
 import { useBodyOverflowHidden } from "@/hooks/useBodyOverflowHidden";
 
-// Component
 export default function Menu() {
-  // Use close menu on resize
   useCloseMenuOnResize();
 
-  // Use body class on menu open
   useBodyOverflowHidden();
 
-  // Use open menu
   const { openMenu, setOpenMenu } = useOpenMenu();
 
-  // Return
   return (
     <>
       <button

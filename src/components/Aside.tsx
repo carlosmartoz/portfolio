@@ -1,40 +1,24 @@
-// Client component
 "use client";
 
-// Next
 import Link from "next/link";
-
-// Components
+import { links } from "@/utils/links";
 import Button from "@/components/Button";
-
-// Types
 import { type Links } from "@/types/links";
-
-// Next intl
-import { useTranslations } from "next-intl";
-
-// Utils
 import { socialIcons } from "@/utils/socialIcons";
+import { useOpenMenu } from "@/hooks/useOpenMenu";
 
-// Stores
-import { useOpenMenu } from "@/stores/useOpenMenu";
-
-// Component
 export default function Aside() {
-  // Translations
-  const t = useTranslations();
-
-  // Use open menu
   const { openMenu } = useOpenMenu();
 
-  // Return
   return (
     <>
       <aside
-        className={`bg-dark shadow-normal xs:w-[calc(100%-128px)] dark:bg-light fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 px-8 transition-all duration-[400ms] ease-in-out lg:hidden ${openMenu ? "right-0" : "-right-full"}`}
+        className={`bg-dark shadow-normal xs:w-[calc(100%-128px)] dark:bg-light fixed top-0 z-40 flex h-svh w-full flex-col items-center justify-center gap-8 px-8 transition-all duration-[400ms] ease-in-out lg:hidden ${
+          openMenu ? "right-0" : "-right-full"
+        }`}
       >
         <ul className="flex flex-col items-center gap-6">
-          {t.raw("links").map((item: Links) => (
+          {links.map((item: Links) => (
             <li key={item.label} className="flex items-center gap-4">
               <span className="bg-red h-px w-2" aria-hidden="true" />
 
@@ -50,8 +34,8 @@ export default function Aside() {
           <li className="ml-3">
             <Button
               external
-              link={t.raw("header").buttonLink}
-              text={t.raw("header").buttonLabel}
+              text="Curriculum"
+              link="/carlos-martinez-curriculum.pdf/"
             />
           </li>
         </ul>

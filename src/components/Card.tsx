@@ -1,11 +1,7 @@
-// Next
 import Link from "next/link";
-
-// React icons
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
-// Component
 export default function Card({
   title,
   github,
@@ -19,7 +15,6 @@ export default function Card({
   description: string;
   technologies: string[];
 }) {
-  // Return
   return (
     <>
       <section className="group relative block transition-all duration-[150ms] ease-in-out">
