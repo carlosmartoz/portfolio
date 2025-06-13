@@ -1,31 +1,59 @@
-# Introduction
+# QueComí 🍏
 
-<div>
-   <h3>Carlos Martínez</h3>
+A Telegram bot that helps users discover and track their meals using AI-powered recommendations.
 
-   <p>My portfolio to collect my experience and work.</p>
-</div>
+## Features
+
+- 🍽️ Get personalized meal recommendations
+- 📝 Track your meal history
+- ✨ Premium subscription with unlimited requests
+- 💳 Secure payment integration with MercadoPago
+- 🔔 Automated subscription management
+
+## Tech Stack
+
+- Node.js & Express
+- Telegram Bot API
+- OpenAI API
+- MercadoPago API
+- Supabase
+- Node-cron for scheduling
 
 ## Installation
 
-1. Install dependencies
+1. Clone the repository:
 
-   ```sh
+   ```bash
+   git clone https://github.com/yourusername/quecomibot.git
+   cd quecomibot
+   ```
+
+2. Install dependencies:
+
+   ```bash
    npm install
    ```
 
-## Development
+3. Configure environment variables:
 
-2. Start the development server
+   - Create a `.env` file in the root directory
+   - Add required environment variables:
+     ```
+     TELEGRAM_TOKEN=your_telegram_bot_token
+     OPENAI_API_KEY=your_openai_api_key
+     MERCADOPAGO_ACCESS_TOKEN=your_mercadopago_token
+     SUPABASE_URL=your_supabase_url
+     SUPABASE_KEY=your_supabase_key
+     ```
 
-   ```sh
+4. Start the development server:
+
+   ```bash
    npm run dev
    ```
 
-## Production
-
-3. Generate a production build
-
-   ```sh
+5. Start the production server:
+   ```bash
    npm run build
+   npm start
    ```
