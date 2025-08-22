@@ -1,50 +1,56 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Fira_Code, Inter } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
+// Importing the Fira Code font with variable support
 const firaCode = Fira_Code({
-  variable: "--font-fira-code",
+  variable: "--font-fira",
   subsets: ["latin"],
 });
 
+// Metadata for the page
 export const metadata: Metadata = {
-  generator: "Next.js",
-  category: "Portfolio",
   title: "Carlos Martínez",
-  creator: "Carlos Martínez",
+  creator: "carlosmartoz",
   keywords: [
+    "React",
+    "Next.js",
     "Portfolio",
     "Portafolio",
+    "Diseño web",
+    "carlosmartoz",
     "Carlos Martínez",
+    "carlosmartoz.com",
+    "carlosmartoz portfolio",
+    "Desarrollador Front-End",
+    "carlosmartoz portafolio",
     "Carlos Martínez Portafolio",
     "Carlos Martínez's Portfolio",
   ],
   referrer: "origin-when-cross-origin",
-  description: "Carlos Martínez's Portfolio.",
+  description:
+    "Portfolio de Carlos Martínez, desarrollador front-end especializado en React, Next.js. Conoce sus proyectos y experiencia profesional.",
   openGraph: {
     type: "website",
-    title: "Carlos Martínez",
-    siteName: "Carlos Martínez",
+    title: "carlosmartoz",
+    siteName: "carlosmartoz",
     url: "https://carlosmartoz.com/",
-    images: "/images/opengraph-image.png",
-    description: "Carlos Martínez's Portfolio.",
+    images: "/images/carlosmartoz-op.png",
+    description:
+      "Portfolio de Carlos Martínez, desarrollador front-end especializado en React, Next.js. Conoce sus proyectos y experiencia profesional.",
   },
   twitter: {
-    title: "Carlos Martínez",
-    creator: "@carlosamartoz",
+    title: "carlosmartoz",
+    creator: "@carlosmartoz",
     card: "summary_large_image",
-    images: "/images/twitter-image.png",
-    description: "Carlos Martínez's Portfolio.",
+    images: "/images/carlosmartoz-tw.png",
+    description:
+      "Portfolio de Carlos Martínez, desarrollador front-end especializado en React, Next.js. Conoce sus proyectos y experiencia profesional.",
   },
   metadataBase: new URL("https://carlosmartoz.com/"),
-  authors: [{ name: "Carlos", url: "https://carlosmartoz.com/" }],
+  authors: [{ name: "carlosmartoz", url: "https://carlosmartoz.com/" }],
   icons: {
     shortcut: {
       sizes: "32x32",
@@ -108,17 +114,15 @@ export const metadata: Metadata = {
   },
 };
 
+// Root layout component
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="es"
-      className="bg-dark dark:bg-light min-h-svh scroll-smooth transition-all duration-[400ms] ease-in-out"
-    >
-      <body className={`min-h-svh ${inter.variable} ${firaCode.variable}`}>
+    <html lang="es" className="bg-dark scroll-smooth">
+      <body className={`${firaCode.variable}`}>
         {children}
 
         <Analytics />
