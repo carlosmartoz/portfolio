@@ -1,50 +1,32 @@
 import "@/styles/globals.css";
 import type React from "react";
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+
+const siteUrl = "https://carlosmartoz.com/";
 
 export const metadata: Metadata = {
-  generator: "v0.app",
-  category: "Portfolio",
-  creator: "Carlos Martínez",
+  metadataBase: new URL(siteUrl),
   title: "Carlos Martínez - Portfolio",
-  referrer: "origin-when-cross-origin",
-  description: "Carlos Martínez's Portfolio.",
+  description: "Frontend developer portfolio of Carlos Martínez.",
+  creator: "Carlos Martínez",
+  authors: [{ name: "Carlos Martínez", url: siteUrl }],
+  keywords: ["Carlos Martínez", "Portfolio", "Frontend Developer"],
   openGraph: {
     type: "website",
-    title: "Carlos Martínez",
+    url: siteUrl,
     siteName: "Carlos Martínez",
-    images: "/opengraph-image.png",
-    url: "https://carlosmartoz.com/",
-    description: "Carlos Martínez's Portfolio.",
+    title: "Carlos Martínez - Portfolio",
+    description: "Frontend developer portfolio of Carlos Martínez.",
   },
-  twitter: {
-    creator: "@devilsncry",
-    title: "Carlos Martínez",
-    card: "summary_large_image",
-    images: "/twitter-image.png",
-    description: "Carlos Martínez's Portfolio.",
-  },
-  metadataBase: new URL("https://carlosmartoz.com/"),
-  authors: [
-    { name: "v0.app", url: "https://v0.app/" },
-    { name: "Carlos", url: "https://carlosmartoz.com/" },
-  ],
   icons: {
-    icon: [
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/apple-icon.png",
   },
-  keywords: ["Carlos Martínez Portafolio", "Carlos Martínez's Portfolio"],
 };
 
 export default function RootLayout({
@@ -53,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`font-sans antialiased min-h-svh`}>
+    <html lang="en" className={`dark ${geist.variable}`}>
+      <body className="font-sans antialiased min-h-svh">
         {children}
 
         <Analytics />

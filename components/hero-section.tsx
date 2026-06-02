@@ -16,7 +16,7 @@ export function HeroSection() {
 
       <div className="flex flex-wrap items-center gap-4">
         <Button asChild variant="default">
-          <Link target="_blank" rel="noopener noreferrer" href="/resume.pdf/">
+          <Link target="_blank" rel="noopener noreferrer" href="/resume.pdf">
             Resume
           </Link>
         </Button>
