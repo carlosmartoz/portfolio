@@ -6,10 +6,10 @@ export function HeroSection() {
     <section className="space-y-2">
       <h1 className="text-2xl font-bold text-primary mb-6">Carlos Martínez</h1>
 
-      <h2 className="text-lg font-medium text-primary">Frontend Developer</h2>
+      <h2 className="text-lg font-medium text-primary">Frontend Engineer</h2>
 
       <p className="text-muted-foreground leading-relaxed">
-        I currently work at a consulting firm as a frontend developer for a
+        I currently work at a consulting firm as a frontend engineer for a
         client in the banking sector, where I contribute to the development of
         efficient and scalable solutions.
       </p>
@@ -22,13 +22,7 @@ export function HeroSection() {
         </Button>
 
         <Button asChild variant="secondary">
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="mailto:carlosmrtzo@gmail.com"
-          >
-            E-mail
-          </Link>
+          <Link href="mailto:carlosmrtzo@gmail.com">E-mail</Link>
         </Button>
 
         <Button asChild variant="secondary">
