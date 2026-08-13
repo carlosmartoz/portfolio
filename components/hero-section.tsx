@@ -1,50 +1,24 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ExternalLink } from "@/components/external-link";
+import { links, site } from "@/lib/site";
 
 export function HeroSection() {
   return (
-    <section className="space-y-2">
-      <h1 className="text-2xl font-bold text-primary mb-6">Carlos Martínez</h1>
+    <section className="space-y-6">
+      <div className="space-y-1">
+        <h1 className="text-base font-medium tracking-tight">{site.name}</h1>
 
-      <h2 className="text-lg font-medium text-primary">Frontend Engineer</h2>
-
-      <p className="text-muted-foreground leading-relaxed">
-        I currently work at a consulting firm as a frontend engineer for a
-        client in the banking sector, where I contribute to the development of
-        efficient and scalable solutions.
-      </p>
-
-      <div className="flex flex-wrap items-center gap-4">
-        <Button asChild variant="default">
-          <Link target="_blank" rel="noopener noreferrer" href="/resume.pdf">
-            Resume
-          </Link>
-        </Button>
-
-        <Button asChild variant="secondary">
-          <Link href="mailto:carlosmrtzo@gmail.com">E-mail</Link>
-        </Button>
-
-        <Button asChild variant="secondary">
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/carlosmartoz/"
-          >
-            LinkedIn
-          </Link>
-        </Button>
-
-        <Button asChild variant="secondary">
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/carlosmartoz"
-          >
-            GitHub
-          </Link>
-        </Button>
+        <p className="text-muted">{site.role}</p>
       </div>
+
+      <p className="leading-relaxed text-muted">{site.bio}</p>
+
+      <nav aria-label="Profiles" className="flex flex-wrap gap-x-5 gap-y-2">
+        {links.map(({ label, href }) => (
+          <ExternalLink key={label} href={href}>
+            {label}
+          </ExternalLink>
+        ))}
+      </nav>
     </section>
   );
 }

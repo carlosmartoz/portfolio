@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://carlosmartoz.com";
+import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteUrl,
+      url: site.url,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

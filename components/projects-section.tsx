@@ -1,24 +1,26 @@
-import { projects } from "@/lib/projects";
-import { ProjectCard } from "@/components/project-card";
+import { ExternalLink } from "@/components/external-link";
+import { projects, site } from "@/lib/site";
 
 export function ProjectsSection() {
   return (
-    <section className="space-y-6">
-      <div className="space-y-2">
-        <h2 className="text-lg font-medium text-primary">Projects</h2>
+    <section className="space-y-3">
+      <h2 className="font-medium">Projects</h2>
 
-        <p className="text-muted-foreground leading-relaxed">
-          Occasionally, I work on personal projects to continue improving my
-          skills and stay up to date with the latest trends in the technology
-          world.
-        </p>
-      </div>
+      <p className="leading-relaxed text-muted">{site.projectsIntro}</p>
 
-      <div className="space-y-4">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} project={project} />
+      <ul className="space-y-4 pt-1">
+        {projects.map(({ name, href, description }) => (
+          <li key={name} className="space-y-1">
+            <h3>
+              <ExternalLink href={href} className="font-medium">
+                {name}
+              </ExternalLink>
+            </h3>
+
+            <p className="leading-relaxed text-muted">{description}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

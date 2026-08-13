@@ -14,10 +14,9 @@ My personal portfolio, where I collect my experience and work.
 
 ## ✨ Tech Stack
 
-- **[Next.js](https://nextjs.org/)** — App Router & React Server Components
+- **[Next.js](https://nextjs.org/)** — App Router, fully static, zero client-side JS
 - **[React](https://react.dev/)** + **[TypeScript](https://www.typescriptlang.org/)**
-- **[Tailwind CSS](https://tailwindcss.com/)** — styling
-- **[Lucide](https://lucide.dev/)** — icons
+- **[Tailwind CSS](https://tailwindcss.com/)** — styling, CSS-first config
 - **[Vercel](https://vercel.com/)** — hosting, Analytics & Speed Insights
 
 ## 🚀 Getting Started
@@ -34,11 +33,26 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📦 Scripts
 
-| Command     | Description                  |
-| ----------- | ---------------------------- |
-| `npm dev`   | Start the development server |
-| `npm build` | Build for production         |
-| `npm start` | Run the production build     |
+| Command             | Description                       |
+| ------------------- | --------------------------------- |
+| `pnpm dev`          | Start the development server      |
+| `pnpm build`        | Build for production              |
+| `pnpm start`        | Run the production build          |
+| `pnpm lint`         | Lint with ESLint                  |
+| `pnpm typecheck`    | Type-check with TypeScript        |
+| `pnpm format`       | Format the codebase with Prettier |
+| `pnpm format:check` | Verify formatting without writing |
+
+## 📁 Structure
+
+```
+app/         routes, metadata, robots, sitemap, OG image
+components/  presentational sections, one per block
+lib/site.ts  single source of truth: bio, links, skills, projects
+styles/      Tailwind theme tokens
+```
+
+All copy and data live in [`lib/site.ts`](lib/site.ts) — edit that file to update the site.
 
 ---
 

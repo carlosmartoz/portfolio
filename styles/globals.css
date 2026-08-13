@@ -1,42 +1,30 @@
 @import "tailwindcss";
 
 :root {
+  /* Tells the browser to paint scrollbars and native controls dark. */
+  color-scheme: dark;
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --border: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
-  --radius: 0.625rem;
+  --muted: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
 }
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-border: var(--border);
-  --color-ring: var(--ring);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-accent: var(--accent);
 
+  /* Tailwind derives the `animate-fade-up` utility from this key. */
   --animate-fade-up: fade-up 0.6s ease-out both;
 
   @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(12px);
+      transform: translateY(8px);
     }
     to {
       opacity: 1;
@@ -46,23 +34,31 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
-  }
-}
-
-@layer utilities {
-  /* Entrance animation that respects reduced-motion preferences */
-  .animate-fade-up {
-    animation: var(--animate-fade-up);
+    text-wrap: pretty;
   }
 
+  :focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+
+  /* Collapse motion rather than remove it, so `both`-filled animations
+     still settle on their final frame. */
   @media (prefers-reduced-motion: reduce) {
-    .animate-fade-up {
-      animation: none;
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
     }
   }
 }

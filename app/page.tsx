@@ -1,28 +1,20 @@
-import { HeroSection } from "@/components/hero-section";
-import { SkillsSection } from "@/components/skills-section";
-import { ProjectsSection } from "@/components/projects-section";
 import { Footer } from "@/components/footer";
+import { HeroSection } from "@/components/hero-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { SkillsSection } from "@/components/skills-section";
 
 export default function Home() {
   return (
-    <main className="min-h-svh bg-background text-foreground flex flex-col justify-center items-center">
-      <div className="mx-auto w-full max-w-3xl px-4 py-16 md:py-24 space-y-10">
-        <div className="animate-fade-up">
-          <HeroSection />
-        </div>
+    <div className="mx-auto flex min-h-svh max-w-2xl animate-fade-up flex-col justify-center gap-12 px-6 py-20 text-sm">
+      <main className="flex flex-col gap-12">
+        <HeroSection />
 
-        <div className="animate-fade-up [animation-delay:120ms]">
-          <SkillsSection />
-        </div>
+        <SkillsSection />
 
-        <div className="animate-fade-up [animation-delay:240ms]">
-          <ProjectsSection />
-        </div>
+        <ProjectsSection />
+      </main>
 
-        <div className="animate-fade-up [animation-delay:360ms]">
-          <Footer />
-        </div>
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }

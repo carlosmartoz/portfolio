@@ -1,26 +1,23 @@
 import "@/styles/globals.css";
-import type React from "react";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { site } from "@/lib/site";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
-const siteUrl = "https://carlosmartoz.com";
-
-const title = "Carlos Martínez - Frontend Engineer";
-const description =
-  "Frontend developer specialized in React, Next.js and TypeScript, building efficient and scalable web applications.";
+const title = `${site.name} - ${site.role}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(site.url),
   title,
-  description,
-  creator: "Carlos Martínez",
-  authors: [{ name: "Carlos Martínez", url: siteUrl }],
+  description: site.description,
+  creator: site.name,
+  authors: [{ name: site.name, url: site.url }],
   keywords: [
-    "Carlos Martínez",
+    site.name,
     "Portfolio",
     "Frontend Engineer",
     "React Developer",
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     "Web Developer",
   ],
   alternates: {
-    canonical: siteUrl,
+    canonical: site.url,
   },
   robots: {
     index: true,
@@ -44,16 +41,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: siteUrl,
-    siteName: "Carlos Martínez",
+    url: site.url,
+    siteName: site.name,
     title,
-    description,
+    description: site.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title,
-    description,
+    description: site.description,
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
@@ -64,27 +61,25 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Carlos Martínez",
-  url: siteUrl,
-  jobTitle: "Frontend Engineer",
-  email: "mailto:carlosmrtzo@gmail.com",
-  sameAs: [
-    "https://www.linkedin.com/in/carlosmartoz/",
-    "https://github.com/carlosmartoz",
-  ],
+  name: site.name,
+  url: site.url,
+  jobTitle: site.role,
+  email: `mailto:${site.email}`,
+  sameAs: site.profiles,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className={geist.variable}>
-      <body className="font-sans antialiased min-h-svh">
+      <body className="min-h-svh font-sans antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          // `<` is escaped so a stray "</script>" in the data can never close the tag.
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
 
         {children}
