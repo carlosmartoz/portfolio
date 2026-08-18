@@ -30,7 +30,6 @@ export const site = {
 
 export const links: Link[] = [
   { label: "Resume", href: "/resume.pdf" },
-  { label: "E-mail", href: `mailto:${email}` },
   { label: "LinkedIn", href: linkedin },
   { label: "GitHub", href: github },
 ];
@@ -38,10 +37,10 @@ export const links: Link[] = [
 export const skills: string[] = [
   "HTML5",
   "CSS3",
+  "JavaScript",
+  "TypeScript",
   "React",
   "Next.js",
-  "TypeScript",
-  "JavaScript",
   "Tailwind CSS",
   "Node.js",
   "REST APIs",
