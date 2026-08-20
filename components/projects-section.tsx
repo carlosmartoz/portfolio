@@ -1,5 +1,5 @@
+import { site } from "@/lib/site";
 import { ExternalLink } from "@/components/external-link";
-import { projects, site } from "@/lib/site";
 
 export function ProjectsSection() {
   return (
@@ -9,7 +9,7 @@ export function ProjectsSection() {
       <p className="leading-relaxed text-muted">{site.projectsIntro}</p>
 
       <ul className="space-y-4 pt-1">
-        {projects.map(({ name, href, description }) => (
+        {site.projects.map(({ name, href, description }) => (
           <li key={name} className="space-y-1">
             <h3>
               <ExternalLink href={href} className="font-medium">

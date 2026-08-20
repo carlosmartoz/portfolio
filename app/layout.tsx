@@ -1,14 +1,14 @@
 import "@/styles/globals.css";
+import { site } from "@/lib/site";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { site } from "@/lib/site";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 
-const title = `${site.name} - ${site.role}`;
+const { title } = site;
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -76,7 +76,6 @@ export default function RootLayout({
       <body className="min-h-svh font-sans antialiased">
         <script
           type="application/ld+json"
-          // `<` is escaped so a stray "</script>" in the data can never close the tag.
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}

@@ -2,9 +2,9 @@
 
 # Carlos Martínez — Portfolio
 
-**Frontend Engineer** · React · Next.js · TypeScript
+**Frontend Engineer**
 
-My personal portfolio, where I collect my experience and work.
+Frontend Engineer with 4+ years building web applications, with a focus on React and Next.js. Experienced in performance, component-based architecture, and leveraging AI tools to ship faster.
 
 [**🌐 Live site**](https://carlosmartoz.com) · [LinkedIn](https://www.linkedin.com/in/carlosmartoz/) · [GitHub](https://github.com/carlosmartoz)
 
@@ -14,34 +14,10 @@ My personal portfolio, where I collect my experience and work.
 
 ## ✨ Tech Stack
 
-- **[Next.js](https://nextjs.org/)** — App Router, fully static, zero client-side JS
+- **[Next.js](https://nextjs.org/)** — App Router, statically prerendered
 - **[React](https://react.dev/)** + **[TypeScript](https://www.typescriptlang.org/)**
 - **[Tailwind CSS](https://tailwindcss.com/)** — styling, CSS-first config
 - **[Vercel](https://vercel.com/)** — hosting, Analytics & Speed Insights
-
-## 🚀 Getting Started
-
-```bash
-# install dependencies
-pnpm install
-
-# start the dev server
-pnpm dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📦 Scripts
-
-| Command             | Description                       |
-| ------------------- | --------------------------------- |
-| `pnpm dev`          | Start the development server      |
-| `pnpm build`        | Build for production              |
-| `pnpm start`        | Run the production build          |
-| `pnpm lint`         | Lint with ESLint                  |
-| `pnpm typecheck`    | Type-check with TypeScript        |
-| `pnpm format`       | Format the codebase with Prettier |
-| `pnpm format:check` | Verify formatting without writing |
 
 ## 📁 Structure
 

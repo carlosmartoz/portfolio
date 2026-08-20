@@ -1,22 +1,22 @@
-import { ImageResponse } from "next/og";
 import { site } from "@/lib/site";
+import { ImageResponse } from "next/og";
 
-export const alt = `${site.name} - ${site.role}`;
-export const size = { width: 1200, height: 630 };
+export const alt = site.title;
 export const contentType = "image/png";
+export const size = { width: 1200, height: 630 };
 
 export default function OpengraphImage() {
   return new ImageResponse(
     <div
       style={{
+        padding: 80,
         width: "100%",
         height: "100%",
         display: "flex",
+        color: "#fafafa",
+        background: "#252525",
         flexDirection: "column",
         justifyContent: "center",
-        padding: 80,
-        background: "#252525",
-        color: "#fafafa",
         fontFamily: "sans-serif",
       }}
     >

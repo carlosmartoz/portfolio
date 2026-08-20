@@ -1,5 +1,5 @@
+import { site } from "@/lib/site";
 import { ExternalLink } from "@/components/external-link";
-import { links, site } from "@/lib/site";
 
 export function HeroSection() {
   return (
@@ -13,7 +13,7 @@ export function HeroSection() {
       <p className="leading-relaxed text-muted">{site.bio}</p>
 
       <nav aria-label="Profiles" className="flex flex-wrap gap-x-5 gap-y-2">
-        {links.map(({ label, href }) => (
+        {site.links.map(({ label, href }) => (
           <ExternalLink key={label} href={href}>
             {label}
           </ExternalLink>

@@ -1,4 +1,4 @@
-import { skills } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function SkillsSection() {
   return (
@@ -6,7 +6,7 @@ export function SkillsSection() {
       <h2 className="font-medium">Skills</h2>
 
       <ul className="flex flex-wrap gap-x-2 gap-y-1 text-muted">
-        {skills.map((skill) => (
+        {site.skills.map((skill) => (
           <li
             key={skill}
             className="after:ml-2 after:text-accent after:content-['·'] last:after:content-none"
